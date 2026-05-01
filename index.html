@@ -1561,6 +1561,11 @@ a { text-decoration: none; color: inherit; }
     to { transform: rotate(360deg); }
 }
 
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
 </style>
 
  <!-- PWA -->
@@ -1664,6 +1669,16 @@ a { text-decoration: none; color: inherit; }
  <input type="text" id="heroSearch" class="search-input" data-tg-placeholder="Чӣ кор бояд иҷро шавад?" data-ru-placeholder="Что нужно сделать?" placeholder="Чӣ кор бояд иҷро шавад?">
  <button type="button" class="btn btn-primary btn-search" data-tg="Ҷустуҷӯ" data-ru="Найти">Ҷустуҷӯ</button>
  </div>
+ </div>
+
+ <!-- HERO ORDER ACTIONS -->
+ <div class="hero-order-actions" style="display:flex;gap:12px;justify-content:center;align-items:center;margin-top:18px;flex-wrap:wrap;">
+   <button type="button" class="btn btn-accent btn-lg btn-hero-order" style="background:#f59e0b;color:white;padding:14px 32px;border-radius:12px;font-size:16px;font-weight:700;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(245,158,11,0.4);">
+     ✏️ <span data-tg="Фармоиш гузоштан" data-ru="Заказать услугу">Фармоиш гузоштан</span>
+   </button>
+   <button type="button" class="btn-how-order" style="background:rgba(255,255,255,0.2);color:white;border:1px solid rgba(255,255,255,0.4);padding:14px 22px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;">
+     ❓ <span data-tg="Чӣ хел фармоиш гузорам?" data-ru="Как заказать?">Чӣ хел фармоиш гузорам?</span>
+   </button>
  </div>
 
  <div class="hero-tags">
@@ -2204,6 +2219,60 @@ a { text-decoration: none; color: inherit; }
  </div>
 </div>
 
+<!-- HOW TO ORDER MODAL -->
+<div class="modal-overlay" id="howOrderModal" role="dialog" aria-modal="true" aria-labelledby="howOrderTitle">
+ <div class="modal modal-lg">
+ <button type="button" class="modal-close" aria-label="Пӯшидан">&times;</button>
+ <h2 class="modal-title" id="howOrderTitle" data-tg="📝 Чӣ хел фармоиш гузорам?" data-ru="📝 Как заказать услугу?">📝 Чӣ хел фармоиш гузорам?</h2>
+ <div class="modal-body" style="padding:8px 4px;">
+   <p style="text-align:center;color:#64748b;font-size:15px;margin-bottom:24px;" data-tg="Танҳо 3 қадами оддӣ" data-ru="Всего 3 простых шага">Танҳо 3 қадами оддӣ</p>
+
+   <!-- Step 1 -->
+   <div style="display:flex;gap:14px;align-items:flex-start;background:#f0f9ff;border-left:4px solid #2563eb;border-radius:10px;padding:16px;margin-bottom:14px;">
+     <div style="background:#2563eb;color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:18px;">1</div>
+     <div>
+       <h3 style="font-size:17px;margin:0 0 6px;" data-tg="Сабти ном кунед" data-ru="Зарегистрируйтесь">Сабти ном кунед</h3>
+       <p style="color:#475569;font-size:14px;margin:0;" data-tg="Тугмаи «Бақайдгирӣ»-ро пахш кунед. Ном, рақами телефон ва пароли худро ворид кунед. 30 сония кифоя!" data-ru="Нажмите «Бақайдгирӣ» (Регистрация). Введите имя, номер телефона и пароль. 30 секунд и готово!">
+         Тугмаи «Бақайдгирӣ»-ро пахш кунед. Ном, рақами телефон ва пароли худро ворид кунед. 30 сония кифоя!
+       </p>
+     </div>
+   </div>
+
+   <!-- Step 2 -->
+   <div style="display:flex;gap:14px;align-items:flex-start;background:#f0fdf4;border-left:4px solid #10b981;border-radius:10px;padding:16px;margin-bottom:14px;">
+     <div style="background:#10b981;color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:18px;">2</div>
+     <div>
+       <h3 style="font-size:17px;margin:0 0 6px;" data-tg="Фармоишро тавсиф кунед" data-ru="Опишите задание">Фармоишро тавсиф кунед</h3>
+       <p style="color:#475569;font-size:14px;margin:0 0 8px;" data-tg="Тугмаи «Фармоиш гузоштан»-ро пахш кунед. Чор чизро гӯед:" data-ru="Нажмите «Фармоиш гузоштан» (Заказать). Укажите 4 вещи:">
+         Тугмаи «Фармоиш гузоштан»-ро пахш кунед. Чор чизро гӯед:
+       </p>
+       <ul style="margin:0;padding-left:18px;color:#475569;font-size:14px;line-height:1.8;">
+         <li><strong data-tg="Чӣ кор лозим аст?" data-ru="Что нужно сделать?">Чӣ кор лозим аст?</strong> — масалан: «Таъмири ҳаммом»</li>
+         <li><strong data-tg="Категория" data-ru="Категория">Категория</strong> — Таъмир, Тозакунӣ, IT...</li>
+         <li><strong data-tg="Буҷа" data-ru="Бюджет">Буҷа</strong> — то чанд сомонӣ метавонед диҳед</li>
+         <li><strong data-tg="Шаҳр" data-ru="Город">Шаҳр</strong> — Душанбе, Хуҷанд...</li>
+       </ul>
+     </div>
+   </div>
+
+   <!-- Step 3 -->
+   <div style="display:flex;gap:14px;align-items:flex-start;background:#fef3c7;border-left:4px solid #f59e0b;border-radius:10px;padding:16px;margin-bottom:20px;">
+     <div style="background:#f59e0b;color:white;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;flex-shrink:0;font-size:18px;">3</div>
+     <div>
+       <h3 style="font-size:17px;margin:0 0 6px;" data-tg="Ҷавобро интизор шавед" data-ru="Ждите откликов">Ҷавобро интизор шавед</h3>
+       <p style="color:#475569;font-size:14px;margin:0;" data-tg="Устодон ба фармоиши шумо ҷавоб медиҳанд. Дар «Кабинети ман» ҳамаи фармоишҳои худро мебинед — метавонед пӯшидан, кушодан ё нест кунед." data-ru="Мастера откликнутся на вашу заявку. В «Кабинете» увидите все свои заявки — можете закрыть, открыть или удалить.">
+         Устодон ба фармоиши шумо ҷавоб медиҳанд. Дар «Кабинети ман» ҳамаи фармоишҳои худро мебинед — метавонед пӯшидан, кушодан ё нест кунед.
+       </p>
+     </div>
+   </div>
+
+   <button type="button" class="btn btn-primary btn-full btn-lg btn-start-order" style="margin-top:8px;" data-tg="✏️ Ҳозир фармоиш гузорам" data-ru="✏️ Заказать сейчас">
+     ✏️ Ҳозир фармоиш гузорам
+   </button>
+ </div>
+ </div>
+</div>
+
 <!-- CABINET MODAL -->
 <div class="modal-overlay" id="cabinetModal" role="dialog" aria-modal="true" aria-labelledby="cabinetModalTitle">
  <div class="modal modal-lg">
@@ -2472,14 +2541,78 @@ function logout() {
     updateAuthUI();
 }
 
-async function apiRequest(path, options = {}) {
+// Cold-start banner — показывается во время первого медленного запроса
+let coldStartTimer = null;
+let coldStartShown = false;
+let activeRequests = 0;
+
+function showColdStartBanner() {
+    if (coldStartShown) return;
+    coldStartShown = true;
+    let banner = document.getElementById('coldStartBanner');
+    if (!banner) {
+        banner = document.createElement('div');
+        banner.id = 'coldStartBanner';
+        banner.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#f59e0b;color:white;padding:10px 16px;text-align:center;z-index:10001;font-weight:600;font-size:14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);animation:slideDown 0.3s;';
+        banner.innerHTML = '⏳ Сервер бедор шуда истодааст... 30-50 сония интизор шавед';
+        document.body.appendChild(banner);
+    }
+    banner.style.display = 'block';
+}
+function hideColdStartBanner() {
+    const banner = document.getElementById('coldStartBanner');
+    if (banner) banner.style.display = 'none';
+    coldStartShown = false;
+}
+
+async function apiRequest(path, options = {}, attempt = 1) {
     const headers = { 'Content-Type': 'application/json', ...(options.headers || {}) };
     const token = getToken();
     if (token) headers['Authorization'] = `Bearer ${token}`;
-    const res = await fetch(API_URL + path, { ...options, headers });
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || 'Хатогии сервер');
-    return data;
+
+    // Запускаем таймер: если запрос > 5 сек — показываем баннер cold-start
+    activeRequests++;
+    if (!coldStartTimer) {
+        coldStartTimer = setTimeout(showColdStartBanner, 5000);
+    }
+
+    // AbortController с таймаутом 60 секунд (для cold start Render)
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 60000);
+
+    try {
+        const res = await fetch(API_URL + path, { ...options, headers, signal: controller.signal });
+        clearTimeout(timeoutId);
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || 'Хатогии сервер');
+        return data;
+    } catch (err) {
+        clearTimeout(timeoutId);
+
+        // Сетевая ошибка или таймаут → 1 retry для GET
+        const isNetworkErr = err.name === 'AbortError' || err.name === 'TypeError' || /Failed to fetch|network/i.test(err.message);
+        if (isNetworkErr && attempt < 2 && (!options.method || options.method === 'GET')) {
+            console.warn(`Retry ${attempt}/1 for ${path}`);
+            return apiRequest(path, options, attempt + 1);
+        }
+
+        if (err.name === 'AbortError') {
+            throw new Error('Сервер ҷавоб надод. Лутфан дертар кӯшиш кунед');
+        }
+        if (isNetworkErr) {
+            throw new Error('Алоқаи интернет суст ё қатъ шуд');
+        }
+        throw err;
+    } finally {
+        activeRequests--;
+        if (activeRequests === 0) {
+            if (coldStartTimer) {
+                clearTimeout(coldStartTimer);
+                coldStartTimer = null;
+            }
+            hideColdStartBanner();
+        }
+    }
 }
 
 // ===== UI: ҳолати логин шуда / нашуда =====
@@ -2962,6 +3095,38 @@ document.querySelectorAll('.cta-actions .btn').forEach(btn => {
 // ===== "Фармоиш додан" buttons on specialist cards =====
 document.querySelectorAll('.btn-order').forEach(btn => {
     btn.addEventListener('click', () => openModal(createTaskModal));
+});
+
+// ===== Hero "Фармоиш гузоштан" button =====
+document.querySelectorAll('.btn-hero-order').forEach(btn => {
+    btn.addEventListener('click', () => {
+        if (!getToken()) {
+            toast('Барои фармоиш аввал сабти ном/ворид шавед', 'warning');
+            openModal(registerModal);
+            return;
+        }
+        openModal(createTaskModal);
+    });
+});
+
+// ===== "❓ Чӣ хел фармоиш гузорам?" button =====
+const howOrderModal = document.getElementById('howOrderModal');
+document.querySelectorAll('.btn-how-order').forEach(btn => {
+    btn.addEventListener('click', () => openModal(howOrderModal));
+});
+
+// Кнопка «Ҳозир фармоиш гузорам» в инструкции
+document.querySelectorAll('.btn-start-order').forEach(btn => {
+    btn.addEventListener('click', () => {
+        closeModal(howOrderModal);
+        setTimeout(() => {
+            if (!getToken()) {
+                openModal(registerModal);
+            } else {
+                openModal(createTaskModal);
+            }
+        }, 250);
+    });
 });
 
 // ===== INTERSECTION OBSERVER FOR ANIMATIONS =====

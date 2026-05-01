@@ -1,46 +1,59 @@
-const CACHE_NAME = 'yordam-tj-v2';
+const CACHE_NAME = 'yordam-tj-v3';
 const ASSETS = [
     '/',
     '/index.html',
-    '/style.css',
-    '/script.js',
     '/manifest.json',
     '/icons/icon.svg',
     '/icons/icon-192.png',
-    '/icons/icon-512.png'
+    '/icons/icon-512.png',
+    '/icons/favicon-32x32.png',
+    '/icons/favicon-16x16.png'
 ];
 
-// Install — cache assets
+// Install — pre-cache critical assets
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(CACHE_NAME).then(cache => {
-            return cache.addAll(ASSETS);
-        })
+        caches.open(CACHE_NAME).then(cache =>
+            cache.addAll(ASSETS).catch(err => console.warn('Pre-cache partial fail:', err))
+        )
     );
     self.skipWaiting();
 });
 
-// Activate — clean old caches
+// Activate — cleanup old caches
 self.addEventListener('activate', event => {
     event.waitUntil(
-        caches.keys().then(keys => {
-            return Promise.all(
-                keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
-            );
-        })
+        caches.keys().then(keys =>
+            Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+        )
     );
     self.clients.claim();
 });
 
-// Fetch — network first, fallback to cache
+// Fetch strategies:
+// - API calls (POST/PATCH/DELETE/GET to backend) → network only (no cache)
+// - Static (HTML/CSS/JS/images/fonts) → cache-first, update in background
 self.addEventListener('fetch', event => {
+    const req = event.request;
+    const url = new URL(req.url);
+
+    // Не кэшируем API и сторонние запросы
+    if (req.method !== 'GET' || url.pathname.startsWith('/api/') || url.hostname.includes('onrender.com')) {
+        return; // браузер обработает сам
+    }
+
+    // Cache-first for static
     event.respondWith(
-        fetch(event.request)
-            .then(response => {
-                const clone = response.clone();
-                caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+        caches.match(req).then(cached => {
+            const fetchPromise = fetch(req).then(response => {
+                if (response && response.status === 200 && response.type === 'basic') {
+                    const clone = response.clone();
+                    caches.open(CACHE_NAME).then(cache => cache.put(req, clone));
+                }
                 return response;
-            })
-            .catch(() => caches.match(event.request))
+            }).catch(() => cached); // если сети нет — отдать кэш
+
+            return cached || fetchPromise;
+        })
     );
 });
