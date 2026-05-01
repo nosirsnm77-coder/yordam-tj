@@ -1,0 +1,22 @@
+{
+  "name": "yordam-tj",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "npx serve -l 3000 -s .",
+    "test": "npx playwright test",
+    "test:desktop": "npx playwright test --project=desktop-chrome",
+    "test:mobile": "npx playwright test --project=mobile-android --project=mobile-iphone",
+    "test:report": "npx playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "serve": "^14.2.6",
+    "sharp": "^0.34.5"
+  }
+}

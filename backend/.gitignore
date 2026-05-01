@@ -1,0 +1,4 @@
+node_modules/
+.env
+yordam.db
+*.log

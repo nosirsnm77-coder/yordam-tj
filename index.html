@@ -1,0 +1,3156 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Yordam.tj — Хизматрасонӣ дар Тоҷикистон</title>
+ <meta name="description" content="Платформаи хизматрасонӣ №1 дар Тоҷикистон. Устодон ва мутахассисонро барои ҳар кор ёбед: таъмир, тозакунӣ, боркашонӣ, IT ва ғайра.">
+ <meta name="keywords" content="хизматрасонӣ, Тоҷикистон, усто, таъмир, тозакунӣ, боркашонӣ, Душанбе, yordam">
+ <link rel="canonical" href="https://yordam.tj/">
+
+ <!-- Open Graph -->
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Yordam.tj — Хизматрасонӣ дар Тоҷикистон">
+ <meta property="og:description" content="Ҳазорон усто ва мутахассисон барои иҷрои ҳар кор дар Тоҷикистон. Ёрдамро дар як дақиқа ёбед!">
+ <meta property="og:url" content="https://yordam.tj/">
+ <meta property="og:image" content="https://yordam.tj/icons/og-image.png">
+ <meta property="og:locale" content="tg_TJ">
+ <meta property="og:site_name" content="Yordam.tj">
+
+ <style>
+/* Fonts: system fonts used for maximum compatibility */
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #dbeafe;
+    --accent: #f59e0b;
+    --accent-dark: #d97706;
+    --green: #10b981;
+    --red: #ef4444;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1);
+    --shadow-xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--gray-800);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ===== BUTTONS ===== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border: 2px solid transparent;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+.btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--gray-300);
+    color: var(--gray-700);
+}
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); }
+
+.btn-white {
+    background: white;
+    color: var(--primary);
+}
+.btn-white:hover { background: var(--gray-100); transform: translateY(-1px); }
+
+.btn-outline-white {
+    background: transparent;
+    border-color: rgba(255,255,255,0.5);
+    color: white;
+}
+.btn-outline-white:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+.btn-social {
+    background: var(--gray-100);
+    color: var(--gray-700);
+    border: 1px solid var(--gray-200);
+}
+.btn-social:hover { background: var(--gray-200); }
+
+.btn-sm { padding: 8px 16px; font-size: 13px; }
+.btn-lg { padding: 14px 32px; font-size: 16px; }
+.btn-full { width: 100%; }
+
+/* ===== HEADER ===== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--gray-200);
+    padding: 0 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo-icon { font-size: 28px; display: inline-flex; align-items: center; }
+.logo-icon svg { width: 28px; height: 28px; }
+.logo-text { color: var(--gray-900); }
+.logo-dot { color: var(--primary); }
+
+.nav {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-600);
+    transition: color 0.2s;
+    position: relative;
+}
+.nav-link:hover { color: var(--primary); }
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.2s;
+}
+.nav-link:hover::after { width: 100%; }
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lang-switch {
+    display: flex;
+    background: var(--gray-100);
+    border-radius: var(--radius-full);
+    padding: 2px;
+}
+
+.lang-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    color: var(--gray-500);
+    transition: all 0.2s;
+    font-family: inherit;
+}
+.lang-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero {
+    padding: 140px 0 80px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.hero-title {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-search {
+    max-width: 640px;
+    margin: 0 auto 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 6px 6px 6px 20px;
+    box-shadow: var(--shadow-xl);
+}
+
+.search-icon { font-size: 20px; margin-right: 12px; }
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: inherit;
+    color: var(--gray-800);
+    padding: 12px 0;
+}
+.search-input::placeholder { color: var(--gray-400); }
+
+.btn-search {
+    padding: 12px 28px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+}
+
+.hero-tags {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-tag-label {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.hero-tag {
+    background: rgba(255,255,255,0.15);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    font-size: 13px;
+    border: 1px solid rgba(255,255,255,0.25);
+    transition: all 0.2s;
+}
+.hero-tag:hover { background: rgba(255,255,255,0.25); }
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    position: relative;
+    z-index: 1;
+}
+
+.stat { text-align: center; }
+.stat-num { display: block; font-size: 32px; font-weight: 800; }
+.stat-label { font-size: 14px; opacity: 0.75; }
+
+/* ===== SECTIONS COMMON ===== */
+.section-title {
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--gray-900);
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--gray-500);
+    font-size: 16px;
+    margin-bottom: 48px;
+}
+
+/* ===== CATEGORIES ===== */
+.categories {
+    padding: 80px 0;
+    background: white;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px;
+    background: var(--gray-50);
+    border-radius: var(--radius);
+    border: 1px solid var(--gray-200);
+    transition: all 0.25s;
+    text-align: center;
+}
+.category-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    background: var(--primary-light);
+}
+
+.category-icon { font-size: 40px; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+.category-icon svg { width: 40px; height: 40px; }
+.category-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.category-count { font-size: 13px; color: var(--gray-500); }
+
+/* ===== HOW IT WORKS ===== */
+.how-it-works {
+    padding: 80px 0;
+    background: var(--bg);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.step-card {
+    text-align: center;
+    padding: 40px 24px;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    position: relative;
+}
+
+.step-number {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.step-icon { font-size: 48px; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; color: var(--primary); }
+.step-icon svg { width: 48px; height: 48px; }
+.step-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+.step-desc { font-size: 14px; color: var(--gray-500); line-height: 1.7; }
+
+/* ===== TASKS ===== */
+.tasks-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.tasks-filter {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-full);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    background: white;
+    color: var(--gray-600);
+    transition: all 0.2s;
+    font-family: inherit;
+}
+.filter-btn.active, .filter-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.task-card {
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 24px;
+    transition: all 0.25s;
+    cursor: pointer;
+}
+.task-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+    transform: translateY(-2px);
+}
+
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.task-category {
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 12px;
+    font-weight: 600;
+}
+.cat-clean { background: #d1fae5; color: #059669; }
+.cat-it { background: #ede9fe; color: #7c3aed; }
+.cat-edu { background: #fef3c7; color: #d97706; }
+.cat-transport { background: #fee2e2; color: #dc2626; }
+.cat-photo { background: #fce7f3; color: #db2777; }
+
+.task-time { font-size: 12px; color: var(--gray-400); }
+
+.task-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.task-desc {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-bottom: 16px;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.task-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+}
+
+.task-price {
+    font-weight: 700;
+    color: var(--green);
+    font-size: 14px;
+}
+
+.task-location { color: var(--gray-500); }
+.task-responses { color: var(--gray-400); margin-left: auto; }
+
+.tasks-more { text-align: center; margin-top: 32px; }
+
+/* ===== SPECIALISTS ===== */
+.specialists-section {
+    padding: 80px 0;
+    background: var(--bg);
+}
+
+.specialists-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.specialist-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 28px 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+.specialist-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+.specialist-avatar {
+    font-size: 56px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+}
+.specialist-avatar svg { width: 56px; height: 56px; }
+
+.specialist-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+.specialist-role { font-size: 13px; color: var(--gray-500); margin-bottom: 8px; }
+
+.specialist-rating {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.rating-count { font-weight: 400; color: var(--gray-400); }
+
+.specialist-tags {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.spec-tag {
+    background: var(--gray-100);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    color: var(--gray-600);
+}
+
+.specialist-desc {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+/* ===== CTA ===== */
+.cta-section {
+    padding: 80px 0;
+    background: white;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    border-radius: var(--radius-lg);
+    padding: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    color: white;
+}
+
+.cta-title { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+.cta-desc { font-size: 16px; opacity: 0.85; max-width: 500px; }
+
+.cta-actions {
+    display: flex;
+    gap: 16px;
+    flex-shrink: 0;
+}
+
+/* ===== APP SECTION ===== */
+.app-section {
+    padding: 80px 0;
+    background: var(--bg);
+}
+
+.app-inner {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.app-text { flex: 1; }
+.app-text .section-title { text-align: left; }
+
+.app-desc {
+    font-size: 16px;
+    color: var(--gray-500);
+    margin: 16px 0 32px;
+    line-height: 1.7;
+}
+
+.app-buttons { display: flex; gap: 16px; }
+
+.app-store-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gray-900);
+    color: white;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    transition: all 0.2s;
+}
+.app-store-btn:hover { background: var(--gray-700); transform: translateY(-2px); }
+
+.store-icon { font-size: 24px; display: inline-flex; align-items: center; }
+.store-icon svg { width: 24px; height: 24px; }
+.store-text { text-align: left; }
+.store-text small { font-size: 10px; display: block; opacity: 0.7; }
+.store-text strong { font-size: 16px; }
+
+.app-mockup { flex-shrink: 0; }
+
+.phone-frame {
+    width: 260px;
+    height: 520px;
+    background: var(--gray-900);
+    border-radius: 36px;
+    padding: 12px;
+    box-shadow: var(--shadow-xl);
+}
+
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    padding: 20px 16px;
+}
+
+.mock-header {
+    text-align: center;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--primary);
+    margin-bottom: 16px;
+    padding-top: 20px;
+}
+
+.mock-search {
+    background: var(--gray-100);
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.mock-cards { display: flex; flex-direction: column; gap: 10px; }
+.mock-card {
+    height: 80px;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--primary);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: var(--gray-900);
+    color: var(--gray-300);
+    padding: 64px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-logo {
+    margin-bottom: 16px;
+}
+.footer-logo .logo-text { color: white; }
+.footer-logo .logo-dot { color: var(--primary); }
+
+.footer-desc { font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
+
+.footer-social { display: flex; gap: 12px; }
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gray-800);
+    border-radius: 50%;
+    font-size: 18px;
+    transition: all 0.2s;
+}
+.social-link:hover { background: var(--primary); transform: translateY(-2px); }
+
+.footer-title {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a {
+    font-size: 14px;
+    color: var(--gray-400);
+    transition: color 0.2s;
+}
+.footer-links a:hover { color: white; }
+
+.footer-bottom {
+    margin-top: 48px;
+    padding: 20px 0;
+    border-top: 1px solid var(--gray-800);
+    text-align: center;
+    font-size: 13px;
+    color: var(--gray-500);
+}
+
+/* ===== MODALS ===== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.modal-overlay.active { display: flex; }
+
+.modal {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    width: 100%;
+    max-width: 440px;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+    animation: modalIn 0.3s ease;
+}
+
+.modal-lg { max-width: 560px; }
+
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--gray-100);
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    transition: all 0.2s;
+}
+.modal-close:hover { background: var(--gray-200); color: var(--gray-800); }
+
+.modal-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.input-group { margin-bottom: 16px; }
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 6px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    background: white;
+}
+.form-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-light); }
+
+.form-textarea { resize: vertical; min-height: 100px; }
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.modal-divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+.modal-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gray-200);
+}
+.modal-divider span {
+    position: relative;
+    background: white;
+    padding: 0 16px;
+    color: var(--gray-400);
+    font-size: 13px;
+}
+
+.modal-footer-text {
+    text-align: center;
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-top: 20px;
+}
+.modal-footer-text a { color: var(--primary); font-weight: 600; }
+
+.register-tabs {
+    display: flex;
+    background: var(--gray-100);
+    border-radius: var(--radius-sm);
+    padding: 4px;
+    margin-bottom: 24px;
+}
+
+.reg-tab {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+    color: var(--gray-500);
+    font-family: inherit;
+}
+.reg-tab.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .categories-grid { grid-template-columns: repeat(3, 1fr); }
+    .specialists-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-box { flex-direction: column; text-align: center; padding: 48px 32px; }
+    .cta-desc { margin: 0 auto; }
+}
+
+@media (max-width: 768px) {
+    .nav { display: none; }
+    .btn-login, .btn-register { display: none; }
+    .mobile-menu-btn { display: block; }
+
+    .hero { padding: 120px 0 60px; }
+    .hero-title { font-size: 32px; }
+    .hero-subtitle { font-size: 16px; }
+    .hero-stats { gap: 32px; }
+    .stat-num { font-size: 24px; }
+
+    .search-box { flex-direction: column; padding: 12px; gap: 8px; }
+    .search-input { width: 100%; text-align: center; }
+    .btn-search { width: 100%; }
+    .search-icon { display: none; }
+
+    .section-title { font-size: 28px; }
+    .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .tasks-grid { grid-template-columns: 1fr; }
+    .specialists-grid { grid-template-columns: 1fr; }
+
+    .app-inner { flex-direction: column; gap: 40px; text-align: center; }
+    .app-text .section-title { text-align: center; }
+    .app-buttons { justify-content: center; flex-wrap: wrap; }
+    .phone-frame { width: 220px; height: 440px; }
+
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .footer-social { justify-content: center; }
+
+    .cta-actions { flex-direction: column; width: 100%; }
+    .cta-actions .btn { width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 28px; }
+    .hero-stats { flex-direction: column; gap: 16px; }
+    .categories-grid { grid-template-columns: 1fr 1fr; }
+    .category-card { padding: 20px 12px; }
+    .category-icon { font-size: 32px; }
+    .category-icon svg { width: 32px; height: 32px; }
+}
+
+/* ===== MOBILE NAV ===== */
+.mobile-auth-buttons {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav.mobile-open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: white;
+        padding: 20px;
+        gap: 16px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border-bottom: 1px solid var(--gray-200);
+        z-index: 999;
+    }
+
+    .nav.mobile-open .mobile-auth-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-top: 8px;
+        border-top: 1px solid var(--gray-200);
+    }
+}
+
+/* ===== SCROLL ANIMATIONS ===== */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== TASK FILTER ===== */
+.task-card.hidden {
+    display: none;
+}
+
+/* ===== REGISTER: MASTER FIELDS ===== */
+.master-fields {
+    display: none;
+}
+.master-fields.active {
+    display: block;
+}
+
+/* ===== ACCESSIBILITY ===== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* ===== REGION SELECTOR ===== */
+.region-selector {
+    position: relative;
+    margin-left: 8px;
+}
+
+.region-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-full);
+    background: var(--gray-50);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-700);
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+.region-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-light);
+}
+.region-btn[aria-expanded="true"] {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.region-icon { font-size: 14px; display: inline-flex; align-items: center; }
+.region-icon svg { width: 14px; height: 14px; }
+.region-arrow {
+    font-size: 11px;
+    transition: transform 0.2s;
+}
+.region-btn[aria-expanded="true"] .region-arrow {
+    transform: rotate(180deg);
+}
+
+.region-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 220px;
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    padding: 8px 0;
+    z-index: 1100;
+    list-style: none;
+    animation: dropdownIn 0.2s ease;
+}
+.region-dropdown.open {
+    display: block;
+}
+
+@keyframes dropdownIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(-8px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.region-dropdown-title {
+    padding: 8px 16px 6px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--gray-400);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.region-option {
+    padding: 10px 16px;
+    font-size: 14px;
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.region-option:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+.region-option.active {
+    color: var(--primary);
+    font-weight: 600;
+    background: var(--primary-light);
+}
+.region-option.active::after {
+    content: '✓';
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* ===== CHAT WIDGET ===== */
+.chat-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1500;
+}
+
+.chat-fab {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.chat-fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.5);
+}
+
+.chat-fab-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 22px;
+    height: 22px;
+    background: var(--red);
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    animation: badgePulse 2s infinite;
+}
+.chat-fab-badge.hidden { display: none; }
+
+@keyframes badgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.chat-window {
+    display: none;
+    position: absolute;
+    bottom: 72px;
+    right: 0;
+    width: 380px;
+    height: 520px;
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    overflow: hidden;
+    flex-direction: column;
+    animation: chatIn 0.3s ease;
+}
+.chat-window.open {
+    display: flex;
+}
+
+@keyframes chatIn {
+    from { opacity: 0; transform: translateY(16px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.chat-header-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chat-avatar {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.chat-header-title {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.chat-header-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.chat-status-dot {
+    width: 8px;
+    height: 8px;
+    background: #4ade80;
+    border-radius: 50%;
+    display: inline-block;
+    animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.chat-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+.chat-close:hover { background: rgba(255,255,255,0.3); }
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--gray-50);
+}
+
+.chat-message {
+    display: flex;
+    max-width: 85%;
+}
+.chat-message-bot {
+    align-self: flex-start;
+}
+.chat-message-user {
+    align-self: flex-end;
+}
+
+.chat-msg-bubble {
+    padding: 12px 16px;
+    border-radius: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+}
+
+.chat-message-bot .chat-msg-bubble {
+    background: white;
+    color: var(--gray-800);
+    border-bottom-left-radius: 4px;
+    box-shadow: var(--shadow-sm);
+}
+
+.chat-message-user .chat-msg-bubble {
+    background: var(--primary);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-msg-time {
+    display: block;
+    font-size: 11px;
+    opacity: 0.5;
+    margin-top: 4px;
+    text-align: right;
+}
+
+.chat-quick-actions {
+    padding: 12px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    border-top: 1px solid var(--gray-100);
+    background: white;
+    flex-shrink: 0;
+}
+
+.chat-quick-btn {
+    padding: 6px 12px;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-full);
+    background: white;
+    font-size: 12px;
+    font-family: inherit;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+.chat-quick-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+.chat-input-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-top: 1px solid var(--gray-200);
+    background: white;
+    flex-shrink: 0;
+}
+
+.chat-input {
+    flex: 1;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-full);
+    padding: 10px 16px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.chat-input:focus {
+    border-color: var(--primary);
+}
+
+.chat-send {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+.chat-send:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+/* Chat typing indicator */
+.chat-typing .chat-msg-bubble::after {
+    content: '●●●';
+    animation: typing 1.2s infinite;
+    letter-spacing: 3px;
+}
+@keyframes typing {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Chat responsive */
+@media (max-width: 480px) {
+    .chat-widget { bottom: 16px; right: 16px; }
+    .chat-window {
+        width: calc(100vw - 32px);
+        height: calc(100vh - 120px);
+        bottom: 68px;
+        right: -8px;
+    }
+}
+
+/* Region selector responsive */
+.mobile-region-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-600);
+    margin-bottom: 6px;
+    display: block;
+}
+.mobile-region-select {
+    padding: 10px 14px;
+    font-size: 14px;
+}
+.region-selector-mobile {
+    display: none;
+    padding-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .region-selector { display: none; }
+    .nav.mobile-open .region-selector-mobile {
+        display: block;
+    }
+}
+@media (min-width: 769px) {
+    .region-selector-mobile { display: none !important; }
+}
+
+/* Form validation */
+.form-input:invalid:not(:placeholder-shown) {
+    border-color: var(--red);
+}
+.form-input:valid:not(:placeholder-shown) {
+    border-color: var(--green);
+}
+
+/* ===== TOAST NOTIFICATIONS ===== */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+    max-width: 400px;
+}
+.toast {
+    background: white;
+    border-radius: 12px;
+    padding: 14px 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-left: 4px solid var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 280px;
+    animation: toastIn 0.3s ease-out;
+    pointer-events: auto;
+    font-weight: 500;
+}
+.toast.toast-success { border-left-color: var(--green); }
+.toast.toast-error { border-left-color: var(--red); }
+.toast.toast-warning { border-left-color: var(--accent); }
+.toast.toast-removing { animation: toastOut 0.3s ease-in forwards; }
+.toast-icon { font-size: 22px; flex-shrink: 0; }
+.toast-content { flex: 1; color: var(--gray-800); font-size: 14px; }
+.toast-close {
+    background: none; border: none; cursor: pointer;
+    color: var(--gray-500); padding: 4px; font-size: 18px;
+    line-height: 1; flex-shrink: 0;
+}
+.toast-close:hover { color: var(--gray-800); }
+
+@keyframes toastIn {
+    from { transform: translateX(120%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+@keyframes toastOut {
+    from { transform: translateX(0); opacity: 1; }
+    to { transform: translateX(120%); opacity: 0; }
+}
+@media (max-width: 600px) {
+    .toast-container { left: 10px; right: 10px; max-width: none; top: 10px; }
+    .toast { min-width: auto; }
+}
+
+/* ===== BUTTON LOADING STATE ===== */
+.btn-loading {
+    pointer-events: none;
+    opacity: 0.7;
+    position: relative;
+}
+.btn-loading::after {
+    content: '';
+    width: 14px; height: 14px;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 8px;
+    animation: spin 0.7s linear infinite;
+    vertical-align: middle;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+</style>
+
+ <!-- PWA -->
+ <link rel="manifest" href="manifest.json">
+ <meta name="theme-color" content="#2563eb">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+ <meta name="apple-mobile-web-app-title" content="Yordam.tj">
+ <link rel="icon" href="icons/favicon-32x32.png" sizes="32x32" type="image/png">
+ <link rel="icon" href="icons/favicon-16x16.png" sizes="16x16" type="image/png">
+ <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+ <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+ <!-- Noscript fallback: show animated cards even without JS -->
+ <noscript>
+ <style>
+ .animate-on-scroll { opacity: 1 !important; transform: none !important; }
+ </style>
+ </noscript>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+ <div class="container header-inner">
+ <a href="#" class="logo">
+ <span class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l1-2a2 2 0 0 1 2-1h1l3 3 3-1 2 2"/><path d="M2 14l4-4 3 1 3-3 4 1 4-2 2 3"/><path d="M2 14l2 4h16l2-4"/></svg></span>
+ <span class="logo-text">Yordam<span class="logo-dot">.tj</span></span>
+ </a>
+ <div class="region-selector" id="regionSelector">
+ <button type="button" class="region-btn" id="regionBtn" aria-expanded="false" aria-haspopup="listbox">
+ <span class="region-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></span>
+ <span class="region-current" id="regionCurrent" data-tg="Душанбе" data-ru="Душанбе">Душанбе</span>
+ <span class="region-arrow" aria-hidden="true">▾</span>
+ </button>
+ <ul class="region-dropdown" id="regionDropdown" role="listbox" aria-label="Интихоби шаҳр">
+ <li class="region-dropdown-title" data-tg="Шаҳрро интихоб кунед" data-ru="Выберите город">Шаҳрро интихоб кунед</li>
+ <li class="region-option active" role="option" aria-selected="true" data-city="dushanbe" data-tg="Душанбе" data-ru="Душанбе">Душанбе</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="khujand" data-tg="Хуҷанд" data-ru="Худжанд">Хуҷанд</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="bokhtar" data-tg="Бохтар" data-ru="Бохтар">Бохтар</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="kulob" data-tg="Кӯлоб" data-ru="Куляб">Кӯлоб</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="isfara" data-tg="Исфара" data-ru="Исфара">Исфара</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="istaravshan" data-tg="Истаравшан" data-ru="Истаравшан">Истаравшан</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="vahdat" data-tg="Ваҳдат" data-ru="Вахдат">Ваҳдат</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="tursunzoda" data-tg="Турсунзода" data-ru="Турсунзаде">Турсунзода</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="panjakent" data-tg="Панҷакент" data-ru="Пенджикент">Панҷакент</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="khorog" data-tg="Хоруғ" data-ru="Хорог">Хоруғ</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="norak" data-tg="Нурек" data-ru="Нурек">Нурек</li>
+ <li class="region-option" role="option" aria-selected="false" data-city="all" data-tg="Ҳамаи Тоҷикистон" data-ru="Весь Таджикистан">Ҳамаи Тоҷикистон</li>
+ </ul>
+ </div>
+ <nav class="nav" id="mainNav" aria-label="Навигатсияи асосӣ">
+ <a href="#categories" class="nav-link" data-tg="Хизматҳо" data-ru="Услуги">Хизматҳо</a>
+ <a href="#how" class="nav-link" data-tg="Чӣ тавр кор мекунад" data-ru="Как это работает">Чӣ тавр кор мекунад</a>
+ <a href="#tasks" class="nav-link" data-tg="Фармоишҳо" data-ru="Задания">Фармоишҳо</a>
+ <a href="#specialists" class="nav-link" data-tg="Устодон" data-ru="Специалисты">Устодон</a>
+ <div class="region-selector-mobile">
+ <label class="mobile-region-label" data-tg="Шаҳр:" data-ru="Город:"> Шаҳр:</label>
+ <select class="form-input mobile-region-select" id="mobileRegionSelect">
+ <option value="dushanbe" data-tg="Душанбе" data-ru="Душанбе">Душанбе</option>
+ <option value="khujand" data-tg="Хуҷанд" data-ru="Худжанд">Хуҷанд</option>
+ <option value="bokhtar" data-tg="Бохтар" data-ru="Бохтар">Бохтар</option>
+ <option value="kulob" data-tg="Кӯлоб" data-ru="Куляб">Кӯлоб</option>
+ <option value="isfara" data-tg="Исфара" data-ru="Исфара">Исфара</option>
+ <option value="istaravshan" data-tg="Истаравшан" data-ru="Истаравшан">Истаравшан</option>
+ <option value="vahdat" data-tg="Ваҳдат" data-ru="Вахдат">Ваҳдат</option>
+ <option value="tursunzoda" data-tg="Турсунзода" data-ru="Турсунзаде">Турсунзода</option>
+ <option value="panjakent" data-tg="Панҷакент" data-ru="Пенджикент">Панҷакент</option>
+ <option value="khorog" data-tg="Хоруғ" data-ru="Хорог">Хоруғ</option>
+ <option value="norak" data-tg="Нурек" data-ru="Нурек">Нурек</option>
+ <option value="all" data-tg="Ҳамаи Тоҷикистон" data-ru="Весь Таджикистан">Ҳамаи Тоҷикистон</option>
+ </select>
+ </div>
+ <div class="mobile-auth-buttons">
+ <button type="button" class="btn btn-outline btn-full btn-login" data-tg="Даромадан" data-ru="Войти">Даромадан</button>
+ <button type="button" class="btn btn-primary btn-full btn-register" data-tg="Бақайдгирӣ" data-ru="Регистрация">Бақайдгирӣ</button>
+ </div>
+ </nav>
+ <div class="header-actions">
+ <div class="lang-switch" role="group" aria-label="Забон">
+ <button type="button" class="lang-btn active" data-lang="tg">TJ</button>
+ <button type="button" class="lang-btn" data-lang="ru">RU</button>
+ </div>
+ <button type="button" class="btn btn-outline btn-login" data-tg="Даромадан" data-ru="Войти">Даромадан</button>
+ <button type="button" class="btn btn-primary btn-register" data-tg="Бақайдгирӣ" data-ru="Регистрация">Бақайдгирӣ</button>
+ <button type="button" class="mobile-menu-btn" aria-label="Менюро кушодан" aria-expanded="false" aria-controls="mainNav">☰</button>
+ </div>
+ </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+ <div class="container">
+ <h1 class="hero-title" data-tg="Ёрдамро&lt;br&gt;дар як дақиқа ёбед" data-ru="Найдите помощь&lt;br&gt;за одну минуту">Ёрдамро<br>дар як дақиқа ёбед</h1>
+ <p class="hero-subtitle" data-tg="Ҳазорон усто ва мутахассисон барои иҷрои ҳар кор дар Тоҷикистон" data-ru="Тысячи мастеров и специалистов для выполнения любой работы в Таджикистане">Ҳазорон усто ва мутахассисон барои иҷрои ҳар кор дар Тоҷикистон</p>
+
+ <div class="hero-search">
+ <div class="search-box" role="search">
+ <span class="search-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></span>
+ <label for="heroSearch" class="sr-only" data-tg="Ҷустуҷӯ" data-ru="Поиск">Ҷустуҷӯ</label>
+ <input type="text" id="heroSearch" class="search-input" data-tg-placeholder="Чӣ кор бояд иҷро шавад?" data-ru-placeholder="Что нужно сделать?" placeholder="Чӣ кор бояд иҷро шавад?">
+ <button type="button" class="btn btn-primary btn-search" data-tg="Ҷустуҷӯ" data-ru="Найти">Ҷустуҷӯ</button>
+ </div>
+ </div>
+
+ <div class="hero-tags">
+ <span class="hero-tag-label" data-tg="Маъмултарин:" data-ru="Популярное:">Маъмултарин:</span>
+ <a href="#tasks" class="hero-tag" data-tg="Таъмири хона" data-ru="Ремонт квартиры">Таъмири хона</a>
+ <a href="#tasks" class="hero-tag" data-tg="Тозакунӣ" data-ru="Уборка">Тозакунӣ</a>
+ <a href="#tasks" class="hero-tag" data-tg="Боркашонӣ" data-ru="Грузоперевозки">Боркашонӣ</a>
+ <a href="#tasks" class="hero-tag" data-tg="Сантехник" data-ru="Сантехник">Сантехник</a>
+ <a href="#tasks" class="hero-tag" data-tg="Барқчӣ" data-ru="Электрик">Барқчӣ</a>
+ </div>
+
+ <div class="hero-stats">
+ <div class="stat">
+ <span class="stat-num" id="statUsers">—</span>
+ <span class="stat-label" data-tg="Корбарон" data-ru="Пользователей">Корбарон</span>
+ </div>
+ <div class="stat">
+ <span class="stat-num" id="statTasks">—</span>
+ <span class="stat-label" data-tg="Заявкаҳои нав" data-ru="Новых заявок">Заявкаҳои нав</span>
+ </div>
+ <div class="stat">
+ <span class="stat-num">4.8</span>
+ <span class="stat-label" data-tg="Баҳои миёна" data-ru="Средняя оценка">Баҳои миёна</span>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+ <div class="container">
+ <h2 class="section-title" data-tg="Категорияҳои хизматрасонӣ" data-ru="Категории услуг">Категорияҳои хизматрасонӣ</h2>
+ <p class="section-subtitle" data-tg="Ҳар як корро ба устодон супоред" data-ru="Доверьте любую работу профессионалам">Ҳар як корро ба устодон супоред</p>
+
+ <div class="categories-grid">
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+ <h3 class="category-name" data-tg="Таъмири хона" data-ru="Ремонт квартиры">Таъмири хона</h3>
+ <span class="category-count" data-tg="1,240 усто" data-ru="1,240 мастеров">1,240 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8"/><path d="M2 18h20"/><path d="M6 14v8"/><path d="M10 14v8"/><path d="M14 14v8"/><path d="M18 14v8"/></svg></div>
+ <h3 class="category-name" data-tg="Тозакунӣ" data-ru="Уборка">Тозакунӣ</h3>
+ <span class="category-count" data-tg="890 усто" data-ru="890 мастеров">890 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+ <h3 class="category-name" data-tg="Боркашонӣ" data-ru="Грузоперевозки">Боркашонӣ</h3>
+ <span class="category-count" data-tg="650 усто" data-ru="650 мастеров">650 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg></div>
+ <h3 class="category-name" data-tg="Сантехникӣ" data-ru="Сантехника">Сантехникӣ</h3>
+ <span class="category-count" data-tg="430 усто" data-ru="430 мастеров">430 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+ <h3 class="category-name" data-tg="Барқчигарӣ" data-ru="Электрика">Барқчигарӣ</h3>
+ <span class="category-count" data-tg="380 усто" data-ru="380 мастеров">380 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+ <h3 class="category-name" data-tg="IT ва компютер" data-ru="IT и компьютеры">IT ва компютер</h3>
+ <span class="category-count" data-tg="520 усто" data-ru="520 мастеров">520 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+ <h3 class="category-name" data-tg="Фото ва видео" data-ru="Фото и видео">Фото ва видео</h3>
+ <span class="category-count" data-tg="310 усто" data-ru="310 мастеров">310 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
+ <h3 class="category-name" data-tg="Омӯзгорӣ" data-ru="Репетиторство">Омӯзгорӣ</h3>
+ <span class="category-count" data-tg="760 усто" data-ru="760 мастеров">760 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/></svg></div>
+ <h3 class="category-name" data-tg="Дизайн" data-ru="Дизайн">Дизайн</h3>
+ <span class="category-count" data-tg="290 усто" data-ru="290 мастеров">290 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="16" rx="2"/><path d="M6 2h12l2 4H4l2-4z"/><path d="M12 10v8"/><path d="M8 10v8"/><path d="M16 10v8"/></svg></div>
+ <h3 class="category-name" data-tg="Сохтмон" data-ru="Строительство">Сохтмон</h3>
+ <span class="category-count" data-tg="870 усто" data-ru="870 мастеров">870 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14v-5l-2-5H7L5 12v5z"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="17.5" r="2.5"/></svg></div>
+ <h3 class="category-name" data-tg="Таъмири мошин" data-ru="Ремонт авто">Таъмири мошин</h3>
+ <span class="category-count" data-tg="540 усто" data-ru="540 мастеров">540 усто</span>
+ </a>
+ <a href="#tasks" class="category-card animate-on-scroll">
+ <div class="category-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
+ <h3 class="category-name" data-tg="Тарҷумонӣ" data-ru="Переводы">Тарҷумонӣ</h3>
+ <span class="category-count" data-tg="210 усто" data-ru="210 мастеров">210 усто</span>
+ </a>
+ </div>
+ </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how">
+ <div class="container">
+ <h2 class="section-title" data-tg="Чӣ тавр кор мекунад?" data-ru="Как это работает?">Чӣ тавр кор мекунад?</h2>
+ <p class="section-subtitle" data-tg="Дар се қадам устоди худро ёбед" data-ru="Найдите помощь за три шага">Дар се қадам устоди худро ёбед</p>
+
+ <div class="steps-grid">
+ <div class="step-card animate-on-scroll">
+ <div class="step-number">1</div>
+ <div class="step-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+ <h3 class="step-title" data-tg="Фармоиш диҳед" data-ru="Опишите задачу">Фармоиш диҳед</h3>
+ <p class="step-desc" data-tg="Корро тавсиф кунед, нарх ва вақти иҷрои дилхоҳро нависед" data-ru="Опишите что нужно сделать, укажите желаемую цену и сроки">Корро тавсиф кунед, нарх ва вақти иҷрои дилхоҳро нависед</p>
+ </div>
+ <div class="step-card animate-on-scroll">
+ <div class="step-number">2</div>
+ <div class="step-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+ <h3 class="step-title" data-tg="Усторо интихоб кунед" data-ru="Выберите мастера">Усторо интихоб кунед</h3>
+ <p class="step-desc" data-tg="Устодон ба фармоиши шумо ҷавоб медиҳанд. Баҳоҳо, тавсифот ва нархро муқоиса кунед" data-ru="Мастера откликнутся на ваше задание. Сравните рейтинги, отзывы и цены">Устодон ба фармоиши шумо ҷавоб медиҳанд. Баҳоҳо, тавсифот ва нархро муқоиса кунед</p>
+ </div>
+ <div class="step-card animate-on-scroll">
+ <div class="step-number">3</div>
+ <div class="step-icon" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+ <h3 class="step-title" data-tg="Кор иҷро мешавад" data-ru="Работа выполнена">Кор иҷро мешавад</h3>
+ <p class="step-desc" data-tg="Усто корро иҷро мекунад. Шумо натиҷаро қабул мекунед ва баҳо мегузоред" data-ru="Мастер выполняет работу. Вы принимаете результат и оставляете отзыв">Усто корро иҷро мекунад. Шумо натиҷаро қабул мекунед ва баҳо мегузоред</p>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- TASKS FEED -->
+<section class="tasks-section" id="tasks">
+ <div class="container">
+ <h2 class="section-title" data-tg="Фармоишҳои нав" data-ru="Новые задания">Фармоишҳои нав</h2>
+ <p class="section-subtitle" data-tg="Охирин фармоишҳои муштариён" data-ru="Последние задания от заказчиков">Охирин фармоишҳои муштариён</p>
+
+ <div class="tasks-filter" role="group" aria-label="Филтри фармоишҳо">
+ <button type="button" class="filter-btn active" data-category="all" data-tg="Ҳама" data-ru="Все">Ҳама</button>
+ <button type="button" class="filter-btn" data-category="repair" data-tg="Таъмир" data-ru="Ремонт">Таъмир</button>
+ <button type="button" class="filter-btn" data-category="clean" data-tg="Тозакунӣ" data-ru="Уборка">Тозакунӣ</button>
+ <button type="button" class="filter-btn" data-category="it" data-tg="IT" data-ru="IT">IT</button>
+ <button type="button" class="filter-btn" data-category="edu" data-tg="Омӯзиш" data-ru="Обучение">Омӯзиш</button>
+ <button type="button" class="filter-btn" data-category="other" data-tg="Дигар" data-ru="Другое">Дигар</button>
+ </div>
+
+ <div class="tasks-grid">
+ <div class="task-card animate-on-scroll" data-category="repair">
+ <div class="task-header">
+ <span class="task-category" data-tg="Таъмир" data-ru="Ремонт">Таъмир</span>
+ <span class="task-time" data-tg="12 дақ. пеш" data-ru="12 мин. назад">12 дақ. пеш</span>
+ </div>
+ <h3 class="task-title" data-tg="Таъмири ҳаммом — кошинкорӣ ва сантехника" data-ru="Ремонт ванной — плитка и сантехника">Таъмири ҳаммом — кошинкорӣ ва сантехника</h3>
+ <p class="task-desc" data-tg="Ҳаммомро пурра таъмир кардан лозим: кошинкорӣ, иваз кардани қубурҳо, насб кардани душ ва даст-шӯяк" data-ru="Нужен полный ремонт ванной: укладка плитки, замена труб, установка душа и раковины">Ҳаммомро пурра таъмир кардан лозим: кошинкорӣ, иваз кардани қубурҳо, насб кардани душ ва даст-шӯяк</p>
+ <div class="task-footer">
+ <span class="task-price" data-tg="то 3,000 сомонӣ" data-ru="до 3,000 сомони">то 3,000 сомонӣ</span>
+ <span class="task-location"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></span> <span data-tg="Душанбе" data-ru="Душанбе">Душанбе</span></span>
+ <span class="task-responses" data-tg="5 ҷавоб" data-ru="5 откликов">5 ҷавоб</span>
+ </div>
+ </div>
+
+ <div class="task-card animate-on-scroll" data-category="clean">
+ <div class="task-header">
+ <span class="task-category cat-clean" data-tg="Тозакунӣ" data-ru="Уборка">Тозакунӣ</span>
+ <span class="task-time" data-tg="25 дақ. пеш" data-ru="25 мин. назад">25 дақ. пеш</span>
+ </div>
+ <h3 class="task-title" data-tg="Тозакунии квартираи 3-хонагӣ" data-ru="Уборка 3-комнатной квартиры">Тозакунии квартираи 3-хонагӣ</h3>
+ <p class="task-desc" data-tg="Тозакунии генералӣ — шустани тирезаҳо, тоза кардани мебел, ҷорӯбкашӣ ва шустани фарш" data-ru="Генеральная уборка — мытьё окон, чистка мебели, пылесос и мытьё полов">Тозакунии генералӣ — шустани тирезаҳо, тоза кардани мебел, ҷорӯбкашӣ ва шустани фарш</p>
+ <div class="task-footer">
+ <span class="task-price" data-tg="500 сомонӣ" data-ru="500 сомони">500 сомонӣ</span>
+ <span class="task-location"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></span> <span data-tg="Хуҷанд" data-ru="Худжанд">Хуҷанд</span></span>
+ <span class="task-responses" data-tg="8 ҷавоб" data-ru="8 откликов">8 ҷавоб</span>
+ </div>
+ </div>
+
+ <div class="task-card animate-on-scroll" data-category="it">
+ <div class="task-header">
+ <span class="task-category cat-it" data-tg="IT" data-ru="IT">IT</span>
+ <span class="task-time" data-tg="1 соат пеш" data-ru="1 час назад">1 соат пеш</span>
+ </div>
+ <h3 class="task-title" data-tg="Сохтани вебсайт барои тиҷорат" data-ru="Создание сайта для бизнеса">Сохтани вебсайт барои тиҷорат</h3>
+ <p class="task-desc" data-tg="Вебсайти корпоративӣ бо 5-7 саҳифа, дизайни муосир, адаптивӣ барои мобайл" data-ru="Корпоративный сайт на 5-7 страниц, современный дизайн, адаптивный для мобильных">Вебсайти корпоративӣ бо 5-7 саҳифа, дизайни муосир, адаптивӣ барои мобайл</p>
+ <div class="task-footer">
+ <span class="task-price" data-tg="то 5,000 сомонӣ" data-ru="до 5,000 сомони">то 5,000 сомонӣ</span>
+ <span class="task-location"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></span> <span data-tg="Дар хат (онлайн)" data-ru="Удалённо">Дар хат (онлайн)</span></span>
+ <span class="task-responses" data-tg="12 ҷавоб" data-ru="12 откликов">12 ҷавоб</span>
+ </div>
+ </div>
+
+ <div class="task-card animate-on-scroll" data-category="edu">
+ <div class="task-header">
+ <span class="task-category cat-edu" data-tg="Омӯзиш" data-ru="Обучение">Омӯзиш</span>
+ <span class="task-time" data-tg="2 соат пеш" data-ru="2 часа назад">2 соат пеш</span>
+ </div>
+ <h3 class="task-title" data-tg="Омӯзгори забони англисӣ барои кӯдак" data-ru="Репетитор английского для ребёнка">Омӯзгори забони англисӣ барои кӯдак</h3>
+ <p class="task-desc" data-tg="Ба фарзандам (10-сола) забони англисӣ лозим аст. 3 маротиба дар ҳафта, 1 соат дарс" data-ru="Ребёнку (10 лет) нужен английский. 3 раза в неделю по 1 часу">Ба фарзандам (10-сола) забони англисӣ лозим аст. 3 маротиба дар ҳафта, 1 соат дарс</p>
+ <div class="task-footer">
+ <span class="task-price" data-tg="150 сомонӣ/моҳ" data-ru="150 сомони/мес">150 сомонӣ/моҳ</span>
+ <span class="task-location"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></span> <span data-tg="Душанбе" data-ru="Душанбе">Душанбе</span></span>
+ <span class="task-responses" data-tg="15 ҷавоб" data-ru="15 откликов">15 ҷавоб</span>
+ </div>
+ </div>
+
+ <div class="task-card animate-on-scroll" data-category="other">
+ <div class="task-header">
+ <span class="task-category cat-transport" data-tg="Боркашонӣ" data-ru="Перевозки">Боркашонӣ</span>
+ <span class="task-time" data-tg="3 соат пеш" data-ru="3 часа назад">3 соат пеш</span>
+ </div>
+ <h3 class="task-title" data-tg="Кӯчонидани мебел ба квартираи нав" data-ru="Перевозка мебели в новую квартиру">Кӯчонидани мебел ба квартираи нав</h3>
+ <p class="task-desc" data-tg="Мебели квартираи 2-хонагӣ — ҷевон, кат, мизу курсӣ. Ошёнаи 4 ба ошёнаи 2" data-ru="Мебель 2-комн. квартиры — шкаф, кровать, стол и стулья. С 4-го на 2-й этаж">Мебели квартираи 2-хонагӣ — ҷевон, кат, мизу курсӣ. Ошёнаи 4 ба ошёнаи 2</p>
+ <div class="task-footer">
+ <span class="task-price" data-tg="400 сомонӣ" data-ru="400 сомони">400 сомонӣ</span>
+ <span class="task-location"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></span> <span data-tg="Душанбе" data-ru="Душанбе">Душанбе</span></span>
+ <span class="task-responses" data-tg="3 ҷавоб" data-ru="3 откликов">3 ҷавоб</span>
+ </div>
+ </div>
+
+ <div class="task-card animate-on-scroll" data-category="other">
+ <div class="task-header">
+ <span class="task-category cat-photo" data-tg="Фото" data-ru="Фото">Фото</span>
+ <span class="task-time" data-tg="4 соат пеш" data-ru="4 часа назад">4 соат пеш</span>
+ </div>
+ <h3 class="task-title" data-tg="Аккосӣ барои тӯйи арӯсӣ" data-ru="Фотограф на свадьбу">Аккосӣ барои тӯйи арӯсӣ</h3>
+ <p class="task-desc" data-tg="Тӯй 15-уми апрел. Аккосии рӯзи пурра — аз ЗАГС то базм. 200+ акс ва 50+ видео" data-ru="Свадьба 15 апреля. Съёмка полного дня — от ЗАГСа до банкета. 200+ фото и 50+ видео">Тӯй 15-уми апрел. Аккосии рӯзи пурра — аз ЗАГС то базм. 200+ акс ва 50+ видео</p>
+ <div class="task-footer">
+ <span class="task-price" data-tg="2,000 сомонӣ" data-ru="2,000 сомони">2,000 сомонӣ</span>
+ <span class="task-location"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></span> <span data-tg="Бохтар" data-ru="Бохтар">Бохтар</span></span>
+ <span class="task-responses" data-tg="7 ҷавоб" data-ru="7 откликов">7 ҷавоб</span>
+ </div>
+ </div>
+ </div>
+
+ <p class="no-results" style="display:none; text-align:center; color:var(--gray-500); padding:40px 0;" data-tg="Ягон фармоиш ёфт нашуд" data-ru="Заданий не найдено">Ягон фармоиш ёфт нашуд</p>
+
+ <div class="tasks-more">
+ <button type="button" class="btn btn-outline btn-lg" data-tg="Ҳамаи фармоишҳо" data-ru="Все задания">Ҳамаи фармоишҳо</button>
+ </div>
+ </div>
+</section>
+
+<!-- SPECIALISTS -->
+<section class="specialists-section" id="specialists">
+ <div class="container">
+ <h2 class="section-title" data-tg="Мутахассисони беҳтарин" data-ru="Лучшие специалисты">Мутахассисони беҳтарин</h2>
+ <p class="section-subtitle" data-tg="Мутахассисони боэътимод бо баҳои баланд" data-ru="Проверенные специалисты с высоким рейтингом">Мутахассисони боэътимод бо баҳои баланд</p>
+
+ <div class="specialists-grid">
+ <div class="specialist-card animate-on-scroll">
+ <div class="specialist-avatar" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></div>
+ <h3 class="specialist-name">Фирдавсӣ М.</h3>
+ <p class="specialist-role" data-tg="Устои таъмир" data-ru="Мастер ремонта">Устои таъмир</p>
+ <div class="specialist-rating"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> 4.9 <span class="rating-count">(187)</span></div>
+ <div class="specialist-tags">
+ <span class="spec-tag" data-tg="Кошинкорӣ" data-ru="Плитка">Кошинкорӣ</span>
+ <span class="spec-tag" data-tg="Сантехника" data-ru="Сантехника">Сантехника</span>
+ </div>
+ <p class="specialist-desc" data-tg="7 сол таҷриба. Таъмири квартира, ҳаммом, ошхона. Кори сифатнок бо кафолат." data-ru="7 лет опыта. Ремонт квартир, ванных, кухонь. Качественная работа с гарантией.">7 сол таҷриба. Таъмири квартира, ҳаммом, ошхона. Кори сифатнок бо кафолат.</p>
+ <button type="button" class="btn btn-primary btn-sm btn-order" data-tg="Фармоиш додан" data-ru="Заказать">Фармоиш додан</button>
+ </div>
+
+ <div class="specialist-card animate-on-scroll">
+ <div class="specialist-avatar" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></div>
+ <h3 class="specialist-name">Мадина Р.</h3>
+ <p class="specialist-role" data-tg="Веб-таҳиягар" data-ru="Веб-разработчик">Веб-таҳиягар</p>
+ <div class="specialist-rating"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> 5.0 <span class="rating-count">(94)</span></div>
+ <div class="specialist-tags">
+ <span class="spec-tag" data-tg="Вебсайт" data-ru="Сайты">Вебсайт</span>
+ <span class="spec-tag" data-tg="Дизайн" data-ru="Дизайн">Дизайн</span>
+ </div>
+ <p class="specialist-desc" data-tg="Сохтани сайтҳои муосир. React, WordPress, дизайн. Ҷавобгарӣ ба мобайл." data-ru="Создание современных сайтов. React, WordPress, дизайн. Адаптивная вёрстка.">Сохтани сайтҳои муосир. React, WordPress, дизайн. Ҷавобгарӣ ба мобайл.</p>
+ <button type="button" class="btn btn-primary btn-sm btn-order" data-tg="Фармоиш додан" data-ru="Заказать">Фармоиш додан</button>
+ </div>
+
+ <div class="specialist-card animate-on-scroll">
+ <div class="specialist-avatar" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></div>
+ <h3 class="specialist-name">Рустам А.</h3>
+ <p class="specialist-role" data-tg="Омӯзгори забонҳо" data-ru="Преподаватель языков">Омӯзгори забонҳо</p>
+ <div class="specialist-rating"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> 4.8 <span class="rating-count">(256)</span></div>
+ <div class="specialist-tags">
+ <span class="spec-tag" data-tg="Англисӣ" data-ru="Английский">Англисӣ</span>
+ <span class="spec-tag" data-tg="Русӣ" data-ru="Русский">Русӣ</span>
+ </div>
+ <p class="specialist-desc" data-tg="Магистри забоншиносӣ. 10 сол таҷриба. IELTS, TOEFL, забони русӣ барои кӯдакон." data-ru="Магистр лингвистики. 10 лет опыта. IELTS, TOEFL, русский для детей.">Магистри забоншиносӣ. 10 сол таҷриба. IELTS, TOEFL, забони русӣ барои кӯдакон.</p>
+ <button type="button" class="btn btn-primary btn-sm btn-order" data-tg="Фармоиш додан" data-ru="Заказать">Фармоиш додан</button>
+ </div>
+
+ <div class="specialist-card animate-on-scroll">
+ <div class="specialist-avatar" aria-hidden="true"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></svg></div>
+ <h3 class="specialist-name">Зарина К.</h3>
+ <p class="specialist-role" data-tg="Аккос / Видеограф" data-ru="Фотограф / Видеограф">Аккос / Видеограф</p>
+ <div class="specialist-rating"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> 4.9 <span class="rating-count">(142)</span></div>
+ <div class="specialist-tags">
+ <span class="spec-tag" data-tg="Тӯй" data-ru="Свадьба">Тӯй</span>
+ <span class="spec-tag" data-tg="Портрет" data-ru="Портрет">Портрет</span>
+ </div>
+ <p class="specialist-desc" data-tg="Аккосии касбӣ: тӯй, маросим, портрет. Коркарди акс ва монтажи видео." data-ru="Профессиональная съёмка: свадьбы, мероприятия, портреты. Обработка фото и монтаж видео.">Аккосии касбӣ: тӯй, маросим, портрет. Коркарди акс ва монтажи видео.</p>
+ <button type="button" class="btn btn-primary btn-sm btn-order" data-tg="Фармоиш додан" data-ru="Заказать">Фармоиш додан</button>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+ <div class="container">
+ <div class="cta-box">
+ <div class="cta-content">
+ <h2 class="cta-title" data-tg="Ба устодон ҳамроҳ шавед!" data-ru="Присоединяйтесь к мастерам!">Ба устодон ҳамроҳ шавед!</h2>
+ <p class="cta-desc" data-tg="Агар шумо мутахассис ҳастед — бақайд гиред ва фармоишҳои навро қабул кунед. Даромади рӯзона аз 100 сомонӣ!" data-ru="Если вы специалист — зарегистрируйтесь и принимайте новые заказы. Ежедневный доход от 100 сомони!">Агар шумо мутахассис ҳастед — бақайд гиред ва фармоишҳои навро қабул кунед. Даромади рӯзона аз 100 сомонӣ!</p>
+ </div>
+ <div class="cta-actions">
+ <button type="button" class="btn btn-white btn-lg" data-tg="Усто шудан" data-ru="Стать мастером">Усто шудан</button>
+ <button type="button" class="btn btn-outline-white btn-lg" data-tg="Фармоиш додан" data-ru="Создать задание">Фармоиш додан</button>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- APP DOWNLOAD -->
+<section class="app-section">
+ <div class="container">
+ <div class="app-inner">
+ <div class="app-text">
+ <h2 class="section-title" data-tg="Барномаи мобайлиро зеркашӣ кунед" data-ru="Скачайте мобильное приложение">Барномаи мобайлиро зеркашӣ кунед</h2>
+ <p class="app-desc" data-tg="Устодро аз телефон ёбед. Фармоиш диҳед, чат кунед ва пардохт намоед — ҳама дар як ҷо" data-ru="Найдите помощь с телефона. Создавайте задания, общайтесь и оплачивайте — всё в одном месте">Устодро аз телефон ёбед. Фармоиш диҳед, чат кунед ва пардохт намоед — ҳама дар як ҷо</p>
+ <div class="app-buttons">
+ <a href="#" class="app-store-btn" rel="noopener noreferrer">
+ <span class="store-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg></span>
+ <span class="store-text">
+ <small data-tg="Зеркашӣ аз" data-ru="Скачать в">Зеркашӣ аз</small>
+ <strong>App Store</strong>
+ </span>
+ </a>
+ <a href="#" class="app-store-btn" rel="noopener noreferrer">
+ <span class="store-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></span>
+ <span class="store-text">
+ <small data-tg="Зеркашӣ аз" data-ru="Доступно в">Зеркашӣ аз</small>
+ <strong>Google Play</strong>
+ </span>
+ </a>
+ </div>
+ </div>
+ <div class="app-mockup">
+ <div class="phone-frame">
+ <div class="phone-screen">
+ <div class="mock-header">Yordam.tj</div>
+ <div class="mock-search" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+ <div class="mock-cards">
+ <div class="mock-card"></div>
+ <div class="mock-card"></div>
+ <div class="mock-card"></div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+ <div class="container">
+ <div class="footer-grid">
+ <div class="footer-col">
+ <a href="#" class="logo footer-logo">
+ <span class="logo-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l1-2a2 2 0 0 1 2-1h1l3 3 3-1 2 2"/><path d="M2 14l4-4 3 1 3-3 4 1 4-2 2 3"/><path d="M2 14l2 4h16l2-4"/></svg></span>
+ <span class="logo-text">Yordam<span class="logo-dot">.tj</span></span>
+ </a>
+ <p class="footer-desc" data-tg="Платформаи хизматрасонӣ №1 дар Тоҷикистон. Устодонро ёбед ё худ усто шавед!" data-ru="Платформа услуг №1 в Таджикистане. Найдите помощь или станьте мастером!">Платформаи хизматрасонӣ №1 дар Тоҷикистон. Устодонро ёбед ё худ усто шавед!</p>
+ <div class="footer-social">
+ <a href="#" class="social-link" aria-label="Facebook"><span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34v7C18.34 21.2 22 17.05 22 12.06c0-5.53-4.5-10.02-10-10.02z"/></svg></span></a>
+ <a href="#" class="social-link" aria-label="Instagram"><span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></span></a>
+ <a href="#" class="social-link" aria-label="Telegram"><span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"/></svg></span></a>
+ <a href="#" class="social-link" aria-label="TikTok"><span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span></a>
+ </div>
+ </div>
+ <div class="footer-col">
+ <h4 class="footer-title" data-tg="Барои муштариён" data-ru="Для заказчиков">Барои муштариён</h4>
+ <ul class="footer-links">
+ <li><a href="#" data-tg="Фармоиш додан" data-ru="Создать задание">Фармоиш додан</a></li>
+ <li><a href="#categories" data-tg="Категорияҳои хизмат" data-ru="Категории услуг">Категорияҳои хизмат</a></li>
+ <li><a href="#how" data-tg="Чӣ тавр кор мекунад" data-ru="Как это работает">Чӣ тавр кор мекунад</a></li>
+ <li><a href="#" data-tg="Нархҳо" data-ru="Цены">Нархҳо</a></li>
+ </ul>
+ </div>
+ <div class="footer-col">
+ <h4 class="footer-title" data-tg="Барои устодон" data-ru="Для мастеров">Барои устодон</h4>
+ <ul class="footer-links">
+ <li><a href="#" data-tg="Бақайдгирии усто" data-ru="Регистрация мастера">Бақайдгирии усто</a></li>
+ <li><a href="#tasks" data-tg="Фармоишҳо" data-ru="Задания">Фармоишҳо</a></li>
+ <li><a href="#" data-tg="Қоидаҳо" data-ru="Правила">Қоидаҳо</a></li>
+ <li><a href="#" data-tg="Ёрӣ" data-ru="Помощь">Ёрӣ</a></li>
+ </ul>
+ </div>
+ <div class="footer-col">
+ <h4 class="footer-title" data-tg="Тамос" data-ru="Контакты">Тамос</h4>
+ <ul class="footer-links">
+ <li><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span> +992 (44) 600-00-00</li>
+ <li><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span> info@yordam.tj</li>
+ <li><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg></span> <span data-tg="Душанбе, Тоҷикистон" data-ru="Душанбе, Таджикистан">Душанбе, Тоҷикистон</span></li>
+ </ul>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p data-tg="© 2026 Yordam.tj — Ҳамаи ҳуқуқҳо ҳифз шудаанд" data-ru="© 2026 Yordam.tj — Все права защищены">© 2026 Yordam.tj — Ҳамаи ҳуқуқҳо ҳифз шудаанд</p>
+ </div>
+ </div>
+</footer>
+
+<!-- LOGIN MODAL -->
+<div class="modal-overlay" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+ <div class="modal">
+ <button type="button" class="modal-close" aria-label="Пӯшидан">&times;</button>
+ <h2 class="modal-title" id="loginModalTitle" data-tg="Даромадан" data-ru="Войти">Даромадан</h2>
+ <form class="modal-body" id="loginForm" novalidate>
+ <div class="input-group">
+ <label for="loginPhone" data-tg="Рақами телефон" data-ru="Номер телефона">Рақами телефон</label>
+ <input type="tel" id="loginPhone" class="form-input" placeholder="+992 (XX) XXX-XX-XX" inputmode="tel" required pattern="\+992\s?\(?\d{2}\)?\s?\d{3}-?\d{2}-?\d{2}">
+ </div>
+ <div class="input-group">
+ <label for="loginPassword" data-tg="Рамз" data-ru="Пароль">Рамз</label>
+ <input type="password" id="loginPassword" class="form-input" data-tg-placeholder="Рамзро ворид кунед" data-ru-placeholder="Введите пароль" placeholder="Рамзро ворид кунед" required minlength="6">
+ </div>
+ <button type="submit" class="btn btn-primary btn-full" data-tg="Даромадан" data-ru="Войти">Даромадан</button>
+ <div class="modal-divider"><span data-tg="ё" data-ru="или">ё</span></div>
+ <button type="button" class="btn btn-social btn-full"><span aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></span> <span data-tg="Тавассути SMS" data-ru="Через SMS">Тавассути SMS</span></button>
+ <p class="modal-footer-text" data-tg="Ҳисоб надоред?" data-ru="Нет аккаунта?">Ҳисоб надоред? <a href="#" class="link-register" data-tg="Бақайд гиред" data-ru="Зарегистрируйтесь">Бақайд гиред</a></p>
+ </form>
+ </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div class="modal-overlay" id="registerModal" role="dialog" aria-modal="true" aria-labelledby="registerModalTitle">
+ <div class="modal">
+ <button type="button" class="modal-close" aria-label="Пӯшидан">&times;</button>
+ <h2 class="modal-title" id="registerModalTitle" data-tg="Бақайдгирӣ" data-ru="Регистрация">Бақайдгирӣ</h2>
+ <form class="modal-body" id="registerForm" novalidate>
+ <div class="register-tabs" role="tablist">
+ <button type="button" class="reg-tab active" role="tab" aria-selected="true" data-role="client" data-tg="Муштарӣ" data-ru="Заказчик">Муштарӣ</button>
+ <button type="button" class="reg-tab" role="tab" aria-selected="false" data-role="master" data-tg="Усто" data-ru="Мастер">Усто</button>
+ </div>
+ <div class="input-group">
+ <label for="regName" data-tg="Ному насаб" data-ru="Имя и фамилия">Ному насаб</label>
+ <input type="text" id="regName" class="form-input" data-tg-placeholder="Номи пурра" data-ru-placeholder="Полное имя" placeholder="Номи пурра" required>
+ </div>
+ <div class="input-group">
+ <label for="regPhone" data-tg="Рақами телефон" data-ru="Номер телефона">Рақами телефон</label>
+ <input type="tel" id="regPhone" class="form-input" placeholder="+992 (XX) XXX-XX-XX" inputmode="tel" required pattern="\+992\s?\(?\d{2}\)?\s?\d{3}-?\d{2}-?\d{2}">
+ </div>
+ <div class="input-group">
+ <label for="regCity" data-tg="Шаҳр" data-ru="Город">Шаҳр</label>
+ <select id="regCity" class="form-input" required>
+ <option data-tg="Душанбе" data-ru="Душанбе">Душанбе</option>
+ <option data-tg="Хуҷанд" data-ru="Худжанд">Хуҷанд</option>
+ <option data-tg="Бохтар" data-ru="Бохтар">Бохтар</option>
+ <option data-tg="Кӯлоб" data-ru="Куляб">Кӯлоб</option>
+ <option data-tg="Исфара" data-ru="Исфара">Исфара</option>
+ <option data-tg="Истаравшан" data-ru="Истаравшан">Истаравшан</option>
+ <option data-tg="Ваҳдат" data-ru="Вахдат">Ваҳдат</option>
+ <option data-tg="Турсунзода" data-ru="Турсунзаде">Турсунзода</option>
+ </select>
+ </div>
+
+ <!-- Master-only fields -->
+ <div class="master-fields" id="masterFields">
+ <div class="input-group">
+ <label for="regSpecialty" data-tg="Ихтисос" data-ru="Специализация">Ихтисос</label>
+ <select id="regSpecialty" class="form-input">
+ <option data-tg="Таъмир" data-ru="Ремонт">Таъмир</option>
+ <option data-tg="Тозакунӣ" data-ru="Уборка">Тозакунӣ</option>
+ <option data-tg="Боркашонӣ" data-ru="Грузоперевозки">Боркашонӣ</option>
+ <option data-tg="Сантехникӣ" data-ru="Сантехника">Сантехникӣ</option>
+ <option data-tg="Барқчигарӣ" data-ru="Электрика">Барқчигарӣ</option>
+ <option data-tg="IT" data-ru="IT">IT</option>
+ <option data-tg="Омӯзгорӣ" data-ru="Репетиторство">Омӯзгорӣ</option>
+ <option data-tg="Фото ва видео" data-ru="Фото и видео">Фото ва видео</option>
+ <option data-tg="Дигар" data-ru="Другое">Дигар</option>
+ </select>
+ </div>
+ <div class="input-group">
+ <label for="regExperience" data-tg="Таҷриба (сол)" data-ru="Опыт (лет)">Таҷриба (сол)</label>
+ <input type="number" id="regExperience" class="form-input" min="0" max="50" placeholder="0">
+ </div>
+ </div>
+
+ <div class="input-group">
+ <label for="regPassword" data-tg="Рамз" data-ru="Пароль">Рамз</label>
+ <input type="password" id="regPassword" class="form-input" data-tg-placeholder="Ақаллан 6 рамз" data-ru-placeholder="Минимум 6 символов" placeholder="Ақаллан 6 рамз" required minlength="6">
+ </div>
+ <button type="submit" class="btn btn-primary btn-full" data-tg="Бақайд гирифтан" data-ru="Зарегистрироваться">Бақайд гирифтан</button>
+ <p class="modal-footer-text" data-tg="Аллакай ҳисоб доред?" data-ru="Уже есть аккаунт?">Аллакай ҳисоб доред? <a href="#" class="link-login" data-tg="Даромадан" data-ru="Войти">Даромадан</a></p>
+ </form>
+ </div>
+</div>
+
+<!-- CREATE TASK MODAL -->
+<div class="modal-overlay" id="createTaskModal" role="dialog" aria-modal="true" aria-labelledby="createTaskModalTitle">
+ <div class="modal modal-lg">
+ <button type="button" class="modal-close" aria-label="Пӯшидан">&times;</button>
+ <h2 class="modal-title" id="createTaskModalTitle" data-tg="Фармоиши нав" data-ru="Новое задание">Фармоиши нав</h2>
+ <form class="modal-body" id="createTaskForm" novalidate>
+ <div class="input-group">
+ <label for="taskName" data-tg="Номи фармоиш" data-ru="Название задания">Номи фармоиш</label>
+ <input type="text" id="taskName" class="form-input" data-tg-placeholder="Масалан: Таъмири ҳаммом" data-ru-placeholder="Например: Ремонт ванной" placeholder="Масалан: Таъмири ҳаммом" required>
+ </div>
+ <div class="input-group">
+ <label for="taskCategory" data-tg="Категория" data-ru="Категория">Категория</label>
+ <select id="taskCategory" class="form-input" required>
+ <option data-tg="Таъмир" data-ru="Ремонт">Таъмир</option>
+ <option data-tg="Тозакунӣ" data-ru="Уборка">Тозакунӣ</option>
+ <option data-tg="Боркашонӣ" data-ru="Грузоперевозки">Боркашонӣ</option>
+ <option data-tg="Сантехникӣ" data-ru="Сантехника">Сантехникӣ</option>
+ <option data-tg="Барқчигарӣ" data-ru="Электрика">Барқчигарӣ</option>
+ <option data-tg="IT" data-ru="IT">IT</option>
+ <option data-tg="Омӯзгорӣ" data-ru="Репетиторство">Омӯзгорӣ</option>
+ <option data-tg="Дигар" data-ru="Другое">Дигар</option>
+ </select>
+ </div>
+ <div class="input-group">
+ <label for="taskDesc" data-tg="Тавсифи кор" data-ru="Описание работы">Тавсифи кор</label>
+ <textarea id="taskDesc" class="form-input form-textarea" rows="4" data-tg-placeholder="Корро муфассал тавсиф кунед..." data-ru-placeholder="Подробно опишите работу..." placeholder="Корро муфассал тавсиф кунед..." required></textarea>
+ </div>
+ <div class="input-row">
+ <div class="input-group">
+ <label for="taskBudget" data-tg="Буҷет (сомонӣ)" data-ru="Бюджет (сомони)">Буҷет (сомонӣ)</label>
+ <input type="number" id="taskBudget" class="form-input" placeholder="0" min="0" required>
+ </div>
+ <div class="input-group">
+ <label for="taskCity" data-tg="Шаҳр" data-ru="Город">Шаҳр</label>
+ <select id="taskCity" class="form-input" required>
+ <option data-tg="Душанбе" data-ru="Душанбе">Душанбе</option>
+ <option data-tg="Хуҷанд" data-ru="Худжанд">Хуҷанд</option>
+ <option data-tg="Бохтар" data-ru="Бохтар">Бохтар</option>
+ <option data-tg="Кӯлоб" data-ru="Куляб">Кӯлоб</option>
+ <option data-tg="Дар хат (онлайн)" data-ru="Удалённо">Дар хат (онлайн)</option>
+ </select>
+ </div>
+ </div>
+ <button type="submit" class="btn btn-primary btn-full btn-lg" data-tg="Фармоиш додан" data-ru="Создать задание">Фармоиш додан</button>
+ </form>
+ </div>
+</div>
+
+<!-- CABINET MODAL -->
+<div class="modal-overlay" id="cabinetModal" role="dialog" aria-modal="true" aria-labelledby="cabinetModalTitle">
+ <div class="modal modal-lg">
+ <button type="button" class="modal-close" aria-label="Пӯшидан">&times;</button>
+ <h2 class="modal-title" id="cabinetModalTitle">👤 Кабинети ман</h2>
+ <div class="modal-body" id="cabinetBody" style="padding:0 4px;">
+   <!-- Контент бо JavaScript пур мешавад -->
+   <p style="text-align:center;color:#64748b;">Боркунӣ...</p>
+ </div>
+ </div>
+</div>
+
+<!-- LIVE CHAT WIDGET -->
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+<div class="chat-widget" id="chatWidget">
+ <button type="button" class="chat-fab" id="chatFab" aria-label="Чат бо мо">
+ <span class="chat-fab-icon" id="chatFabIcon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+ <span class="chat-fab-badge" id="chatBadge">1</span>
+ </button>
+ <div class="chat-window" id="chatWindow" role="dialog" aria-modal="false" aria-label="Чати онлайн">
+ <div class="chat-header">
+ <div class="chat-header-info">
+ <div class="chat-avatar" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11l1-2a2 2 0 0 1 2-1h1l3 3 3-1 2 2"/><path d="M2 14l4-4 3 1 3-3 4 1 4-2 2 3"/><path d="M2 14l2 4h16l2-4"/></svg></div>
+ <div>
+ <div class="chat-header-title">Yordam.tj</div>
+ <div class="chat-header-status">
+ <span class="chat-status-dot"></span>
+ <span data-tg="Онлайн" data-ru="Онлайн">Онлайн</span>
+ </div>
+ </div>
+ </div>
+ <button type="button" class="chat-close" id="chatClose" aria-label="Пӯшидан">&times;</button>
+ </div>
+ <div class="chat-messages" id="chatMessages">
+ <div class="chat-message chat-message-bot">
+ <div class="chat-msg-bubble">
+ <p data-tg="Салом! 👋 Ба Yordam.tj хуш омадед! Чӣ тавр метавонем ёрӣ расонем?" data-ru="Привет! 👋 Добро пожаловать в Yordam.tj! Чем можем помочь?">Салом! 👋 Ба Yordam.tj хуш омадед! Чӣ тавр метавонем ёрӣ расонем?</p>
+ <span class="chat-msg-time">12:00</span>
+ </div>
+ </div>
+ </div>
+ <div class="chat-quick-actions" id="chatQuickActions">
+ <button type="button" class="chat-quick-btn" data-answer="find-master" data-tg="Усто ёфтан" data-ru="Найти мастера"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg> Усто ёфтан</button>
+ <button type="button" class="chat-quick-btn" data-answer="become-master" data-tg="Усто шудан" data-ru="Стать мастером"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> Усто шудан</button>
+ <button type="button" class="chat-quick-btn" data-answer="how-it-works" data-tg="Чӣ тавр кор мекунад" data-ru="Как это работает"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Чӣ тавр кор мекунад</button>
+ <button type="button" class="chat-quick-btn" data-answer="pricing" data-tg="Нархҳо" data-ru="Цены"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg> Нархҳо</button>
+ <button type="button" class="chat-quick-btn" data-answer="contact" data-tg="Тамос бо мо" data-ru="Связаться с нами"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg> Тамос бо мо</button>
+ </div>
+ <div class="chat-input-area">
+ <input type="text" class="chat-input" id="chatInput" data-tg-placeholder="Паёмро нависед..." data-ru-placeholder="Напишите сообщение..." placeholder="Паёмро нависед..." autocomplete="off">
+ <button type="button" class="chat-send" id="chatSend" aria-label="Фиристодан">➤</button>
+ </div>
+ </div>
+</div>
+
+<script>
+// ===== LANGUAGE SWITCHER =====
+let currentLang = 'tg';
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentLang = btn.dataset.lang;
+        switchLanguage(currentLang);
+    });
+});
+
+function switchLanguage(lang) {
+    // Update all text elements with data-tg / data-ru
+    document.querySelectorAll('[data-tg]').forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (!text) return;
+
+        // Use innerHTML only for elements that contain HTML (like <br>)
+        if (text.includes('&lt;') || text.includes('<br')) {
+            el.innerHTML = text;
+        } else {
+            el.textContent = text;
+        }
+    });
+
+    // Update placeholders
+    document.querySelectorAll(`[data-${lang}-placeholder]`).forEach(el => {
+        el.placeholder = el.getAttribute(`data-${lang}-placeholder`);
+    });
+
+    // Update select options
+    document.querySelectorAll('option[data-tg]').forEach(opt => {
+        const text = opt.getAttribute(`data-${lang}`);
+        if (text) opt.textContent = text;
+    });
+
+    // Update page title
+    document.title = lang === 'tg'
+        ? 'Yordam.tj — Хизматрасонӣ дар Тоҷикистон'
+        : 'Yordam.tj — Услуги в Таджикистане';
+
+    // Update html lang
+    document.documentElement.lang = lang === 'tg' ? 'tg' : 'ru';
+
+    // Update meta description
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+        metaDesc.content = lang === 'tg'
+            ? 'Платформаи хизматрасонӣ №1 дар Тоҷикистон. Устодон ва мутахассисонро барои ҳар кор ёбед: таъмир, тозакунӣ, боркашонӣ, IT ва ғайра.'
+            : 'Платформа услуг №1 в Таджикистане. Найдите мастеров и специалистов для любой работы: ремонт, уборка, грузоперевозки, IT и другое.';
+    }
+}
+
+// ===== MODALS =====
+const loginModal = document.getElementById('loginModal');
+const registerModal = document.getElementById('registerModal');
+const createTaskModal = document.getElementById('createTaskModal');
+
+// Open login
+document.querySelectorAll('.btn-login').forEach(btn => {
+    btn.addEventListener('click', () => openModal(loginModal));
+});
+
+// Open register
+document.querySelectorAll('.btn-register').forEach(btn => {
+    btn.addEventListener('click', () => openModal(registerModal));
+});
+
+// Switch between login/register
+document.querySelectorAll('.link-register').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeModal(loginModal);
+        setTimeout(() => openModal(registerModal), 200);
+    });
+});
+
+document.querySelectorAll('.link-login').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeModal(registerModal);
+        setTimeout(() => openModal(loginModal), 200);
+    });
+});
+
+// Close modals
+document.querySelectorAll('.modal-close').forEach(btn => {
+    btn.addEventListener('click', () => {
+        closeModal(btn.closest('.modal-overlay'));
+    });
+});
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeModal(overlay);
+    });
+});
+
+function openModal(modal) {
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        // Focus first input
+        const firstInput = modal.querySelector('input, select, textarea');
+        if (firstInput) setTimeout(() => firstInput.focus(), 300);
+    }
+}
+
+function closeModal(modal) {
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// ESC to close
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.active').forEach(m => closeModal(m));
+    }
+});
+
+// ===== REGISTER TABS (Client / Master) =====
+const masterFields = document.getElementById('masterFields');
+
+document.querySelectorAll('.reg-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        document.querySelectorAll('.reg-tab').forEach(t => {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        // Show/hide master-specific fields
+        if (masterFields) {
+            if (tab.dataset.role === 'master') {
+                masterFields.classList.add('active');
+            } else {
+                masterFields.classList.remove('active');
+            }
+        }
+    });
+});
+
+// ===== TOAST NOTIFICATIONS =====
+function toast(message, type = 'info', duration = 4000) {
+    const container = document.getElementById('toastContainer');
+    if (!container) return;
+
+    const icons = { success: '✅', error: '❌', warning: '⚠️', info: 'ℹ️' };
+    const el = document.createElement('div');
+    el.className = `toast toast-${type}`;
+    el.innerHTML = `
+        <span class="toast-icon">${icons[type] || icons.info}</span>
+        <div class="toast-content">${escapeHtmlSafe(message)}</div>
+        <button type="button" class="toast-close" aria-label="Пӯшидан">×</button>
+    `;
+    container.appendChild(el);
+
+    const remove = () => {
+        el.classList.add('toast-removing');
+        setTimeout(() => el.remove(), 300);
+    };
+    el.querySelector('.toast-close').addEventListener('click', remove);
+    if (duration > 0) setTimeout(remove, duration);
+}
+// Лимити: то функсияи escapeHtml дертар таъриф шавад, версияи муваққатӣ
+function escapeHtmlSafe(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+// ===== BUTTON LOADING HELPERS =====
+function setBtnLoading(btn, loading, originalText) {
+    if (loading) {
+        btn.dataset.originalText = btn.textContent;
+        btn.classList.add('btn-loading');
+        btn.disabled = true;
+        btn.textContent = originalText || 'Боркунӣ';
+    } else {
+        btn.classList.remove('btn-loading');
+        btn.disabled = false;
+        if (btn.dataset.originalText) btn.textContent = btn.dataset.originalText;
+    }
+}
+
+// ===== BACKEND API =====
+const API_URL = 'http://localhost:3001';
+
+function saveToken(token) { localStorage.setItem('yordam_token', token); }
+function getToken() { return localStorage.getItem('yordam_token'); }
+function saveUser(user) { localStorage.setItem('yordam_user', JSON.stringify(user)); }
+function getUser() {
+    const u = localStorage.getItem('yordam_user');
+    return u ? JSON.parse(u) : null;
+}
+function logout() {
+    localStorage.removeItem('yordam_token');
+    localStorage.removeItem('yordam_user');
+    updateAuthUI();
+}
+
+async function apiRequest(path, options = {}) {
+    const headers = { 'Content-Type': 'application/json', ...(options.headers || {}) };
+    const token = getToken();
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+    const res = await fetch(API_URL + path, { ...options, headers });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Хатогии сервер');
+    return data;
+}
+
+// ===== UI: ҳолати логин шуда / нашуда =====
+function updateAuthUI() {
+    const user = getUser();
+    const loginBtns = document.querySelectorAll('.btn-login');
+    const registerBtns = document.querySelectorAll('.btn-register');
+    document.querySelectorAll('.user-menu').forEach(m => m.remove());
+
+    if (user) {
+        loginBtns.forEach(btn => btn.style.display = 'none');
+        registerBtns.forEach(btn => {
+            btn.style.display = 'none';
+            const menu = document.createElement('div');
+            menu.className = 'user-menu';
+            menu.style.cssText = 'display:flex;align-items:center;gap:10px;flex-wrap:wrap;';
+            menu.innerHTML = `
+                <button type="button" class="btn btn-primary btn-cabinet" style="padding:6px 14px;">👤 ${escapeHtml(user.name)}</button>
+                <button type="button" class="btn btn-outline btn-logout" style="padding:6px 14px;">Баромадан</button>
+            `;
+            btn.parentNode.insertBefore(menu, btn.nextSibling);
+        });
+        document.querySelectorAll('.btn-logout').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (confirm('Воқеан мехоҳед бароед?')) logout();
+            });
+        });
+        document.querySelectorAll('.btn-cabinet').forEach(btn => {
+            btn.addEventListener('click', openCabinet);
+        });
+    } else {
+        loginBtns.forEach(btn => btn.style.display = '');
+        registerBtns.forEach(btn => btn.style.display = '');
+    }
+}
+
+// ===== FORM SUBMISSIONS =====
+const loginForm = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+const createTaskForm = document.getElementById('createTaskForm');
+
+if (loginForm) {
+    loginForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!loginForm.checkValidity()) {
+            loginForm.reportValidity();
+            return;
+        }
+        const submitBtn = loginForm.querySelector('button[type="submit"]');
+        setBtnLoading(submitBtn, true, 'Воридшавӣ');
+        const phone = document.getElementById('loginPhone').value.trim();
+        const password = document.getElementById('loginPassword').value;
+        try {
+            const data = await apiRequest('/api/login', {
+                method: 'POST',
+                body: JSON.stringify({ phone, password })
+            });
+            saveToken(data.token);
+            saveUser(data.user);
+            updateAuthUI();
+            toast(`Хуш омадед, ${data.user.name}!`, 'success');
+            closeModal(loginModal);
+            loginForm.reset();
+        } catch (err) {
+            toast(err.message, 'error');
+        } finally {
+            setBtnLoading(submitBtn, false);
+        }
+    });
+}
+
+if (registerForm) {
+    registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!registerForm.checkValidity()) {
+            registerForm.reportValidity();
+            return;
+        }
+        const submitBtn = registerForm.querySelector('button[type="submit"]');
+        setBtnLoading(submitBtn, true, 'Сабт');
+        const name = document.getElementById('regName').value.trim();
+        const phone = document.getElementById('regPhone').value.trim();
+        const password = document.getElementById('regPassword').value;
+        try {
+            const data = await apiRequest('/api/register', {
+                method: 'POST',
+                body: JSON.stringify({ name, phone, password })
+            });
+            saveToken(data.token);
+            saveUser(data.user);
+            updateAuthUI();
+            toast(`Сабти ном муваффақ! Хуш омадед, ${data.user.name}!`, 'success');
+            closeModal(registerModal);
+            registerForm.reset();
+        } catch (err) {
+            toast(err.message, 'error');
+        } finally {
+            setBtnLoading(submitBtn, false);
+        }
+    });
+}
+
+if (createTaskForm) {
+    createTaskForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!createTaskForm.checkValidity()) {
+            createTaskForm.reportValidity();
+            return;
+        }
+        if (!getToken()) {
+            toast('Барои фиристодани заявка аввал ворид шавед', 'warning');
+            return;
+        }
+        const submitBtn = createTaskForm.querySelector('button[type="submit"]');
+        setBtnLoading(submitBtn, true, 'Фиристодан');
+        const title = document.getElementById('taskName').value.trim();
+        const category = document.getElementById('taskCategory').value;
+        const description = document.getElementById('taskDesc').value.trim();
+        const budget = document.getElementById('taskBudget').value;
+        const address = document.getElementById('taskCity').value;
+        try {
+            await apiRequest('/api/tasks', {
+                method: 'POST',
+                body: JSON.stringify({ title, category, description, budget: Number(budget), address })
+            });
+            toast('Заявкаи шумо қабул шуд!', 'success');
+            closeModal(createTaskModal);
+            createTaskForm.reset();
+            loadTasks();
+        } catch (err) {
+            toast(err.message, 'error');
+        } finally {
+            setBtnLoading(submitBtn, false);
+        }
+    });
+}
+
+// ===== ЗАГРУЗКА ЗАЯВОК ИЗ БАЗЫ =====
+function timeAgo(dateStr) {
+    const date = new Date(dateStr.replace(' ', 'T') + 'Z');
+    const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
+    if (seconds < 60) return 'ҳозир';
+    const minutes = Math.floor(seconds / 60);
+    if (minutes < 60) return minutes + ' дақ. пеш';
+    const hours = Math.floor(minutes / 60);
+    if (hours < 24) return hours + ' соат пеш';
+    const days = Math.floor(hours / 24);
+    return days + ' рӯз пеш';
+}
+
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+
+function createTaskCard(task) {
+    const card = document.createElement('div');
+    card.className = 'task-card task-from-db';
+    card.dataset.category = (task.category || 'other').toLowerCase();
+    card.style.cssText = 'border: 2px solid #10b981;';
+    const budget = task.budget ? task.budget + ' сомонӣ' : 'Музокира';
+    const address = task.address || 'Тоҷикистон';
+    card.innerHTML = `
+        <div class="task-header">
+            <span class="task-category">${escapeHtml(task.category)}</span>
+            <span class="task-time">${timeAgo(task.created_at)}</span>
+        </div>
+        <h3 class="task-title">${escapeHtml(task.title)}</h3>
+        <p class="task-desc">${escapeHtml(task.description || '')}</p>
+        <div class="task-footer">
+            <span class="task-price">${budget}</span>
+            <span class="task-location">📍 ${escapeHtml(address)}</span>
+            <span class="task-responses" style="color:#10b981;font-weight:600;">🆕 Нав!</span>
+        </div>
+        <div style="margin-top:8px;font-size:12px;color:#10b981;font-weight:600;">
+            👤 ${escapeHtml(task.user_name)}
+        </div>
+    `;
+    return card;
+}
+
+async function loadTasks() {
+    const grid = document.querySelector('.tasks-grid');
+    if (!grid) return;
+    try {
+        const data = await apiRequest('/api/tasks');
+        if (!data.tasks || data.tasks.length === 0) return;
+        // Заявки из базы добавляем в начало списка
+        data.tasks.reverse().forEach(task => {
+            grid.insertBefore(createTaskCard(task), grid.firstChild);
+        });
+        console.log(`✅ Аз база ${data.tasks.length} заявка бор шуд`);
+    } catch (err) {
+        console.error('Хатогӣ дар loadTasks:', err);
+    }
+}
+
+// ===== КАБИНЕТИ МАН =====
+const cabinetModal = document.getElementById('cabinetModal');
+
+async function openCabinet() {
+    const body = document.getElementById('cabinetBody');
+    body.innerHTML = '<p style="text-align:center;color:#64748b;padding:20px;">Боркунӣ...</p>';
+    openModal(cabinetModal);
+
+    try {
+        const data = await apiRequest('/api/my-tasks');
+        const user = getUser();
+        const stats = data.stats;
+
+        let tasksHtml = '';
+        if (data.tasks.length === 0) {
+            tasksHtml = '<p style="text-align:center;color:#64748b;padding:30px 0;">Шумо ҳоло ягон заявка нафиристодед</p>';
+        } else {
+            tasksHtml = data.tasks.map(t => `
+                <div class="my-task-item" style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px;margin-bottom:10px;">
+                    <div style="display:flex;justify-content:space-between;align-items:start;gap:12px;">
+                        <div style="flex:1;">
+                            <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px;flex-wrap:wrap;">
+                                <span style="background:#dbeafe;color:#2563eb;padding:2px 10px;border-radius:12px;font-size:12px;font-weight:600;">${escapeHtml(t.category)}</span>
+                                <span style="color:#94a3b8;font-size:12px;">${timeAgo(t.created_at)}</span>
+                                <span style="background:${t.status==='open'?'#dcfce7':'#fef3c7'};color:${t.status==='open'?'#166534':'#92400e'};padding:2px 10px;border-radius:12px;font-size:12px;font-weight:600;">${t.status === 'open' ? '🟢 Кушод' : t.status}</span>
+                            </div>
+                            <h4 style="margin:4px 0;font-size:16px;">${escapeHtml(t.title)}</h4>
+                            <p style="color:#64748b;font-size:14px;margin:4px 0;">${escapeHtml(t.description || '')}</p>
+                            <div style="display:flex;gap:14px;color:#475569;font-size:13px;margin-top:8px;flex-wrap:wrap;">
+                                <span>💰 ${t.budget ? t.budget + ' сомонӣ' : 'Музокира'}</span>
+                                <span>📍 ${escapeHtml(t.address || '—')}</span>
+                            </div>
+                        </div>
+                        <div style="display:flex;flex-direction:column;gap:6px;">
+                            <button type="button" class="btn-toggle-task" data-task-id="${t.id}" data-current-status="${t.status}" style="background:${t.status==='open'?'#fef3c7':'#dcfce7'};color:${t.status==='open'?'#92400e':'#166534'};border:1px solid ${t.status==='open'?'#fde68a':'#bbf7d0'};padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;white-space:nowrap;">${t.status==='open'?'🔒 Пӯшидан':'🔓 Кушодан'}</button>
+                            <button type="button" class="btn-delete-task" data-task-id="${t.id}" style="background:#fef2f2;color:#dc2626;border:1px solid #fecaca;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;white-space:nowrap;">🗑️ Нест</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        body.innerHTML = `
+            <div style="background:linear-gradient(135deg,#2563eb,#1d4ed8);color:white;padding:20px;border-radius:12px;margin-bottom:20px;">
+                <h3 style="margin:0;font-size:24px;">👤 ${escapeHtml(user.name)}</h3>
+                <p style="margin:6px 0 0;opacity:0.9;font-size:14px;">📱 ${escapeHtml(user.phone)}</p>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;">
+                <div style="background:#f1f5f9;padding:14px;border-radius:8px;text-align:center;">
+                    <div style="font-size:28px;font-weight:700;color:#2563eb;">${stats.total}</div>
+                    <div style="font-size:12px;color:#64748b;">Ҳамаи заявкаҳо</div>
+                </div>
+                <div style="background:#f0fdf4;padding:14px;border-radius:8px;text-align:center;">
+                    <div style="font-size:28px;font-weight:700;color:#16a34a;">${stats.open}</div>
+                    <div style="font-size:12px;color:#64748b;">Кушод</div>
+                </div>
+                <div style="background:#fef3c7;padding:14px;border-radius:8px;text-align:center;">
+                    <div style="font-size:28px;font-weight:700;color:#d97706;">${stats.in_progress}</div>
+                    <div style="font-size:12px;color:#64748b;">Дар иҷро</div>
+                </div>
+            </div>
+
+            <h3 style="margin:20px 0 12px;font-size:18px;">📋 Заявкаҳои ман</h3>
+            ${tasksHtml}
+        `;
+
+        // Кнопкаҳои "Пӯшидан/Кушодан"
+        body.querySelectorAll('.btn-toggle-task').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const taskId = btn.dataset.taskId;
+                const current = btn.dataset.currentStatus;
+                const newStatus = current === 'open' ? 'closed' : 'open';
+                try {
+                    await apiRequest('/api/tasks/' + taskId + '/status', {
+                        method: 'PATCH',
+                        body: JSON.stringify({ status: newStatus })
+                    });
+                    toast(newStatus === 'closed' ? 'Заявка пӯшида шуд' : 'Заявка кушода шуд', 'success');
+                    setTimeout(openCabinet, 300);
+                } catch (err) {
+                    toast(err.message, 'error');
+                }
+            });
+        });
+
+        // Кнопкаҳои "Нест"
+        body.querySelectorAll('.btn-delete-task').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const taskId = btn.dataset.taskId;
+                if (!confirm('Воқеан мехоҳед заявкаро нест кунед?')) return;
+                try {
+                    await apiRequest('/api/tasks/' + taskId, { method: 'DELETE' });
+                    btn.closest('.my-task-item').remove();
+                    toast('Заявка нест карда шуд', 'success');
+                    setTimeout(openCabinet, 300);
+                } catch (err) {
+                    toast(err.message, 'error');
+                }
+            });
+        });
+    } catch (err) {
+        body.innerHTML = `<p style="color:#dc2626;text-align:center;padding:30px 0;">Хатогӣ: ${escapeHtml(err.message)}</p>`;
+    }
+}
+
+// ===== СТАТИСТИКА В HERO =====
+function animateNumber(el, target) {
+    const duration = 1000;
+    const start = 0;
+    const startTime = performance.now();
+    function step(now) {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const value = Math.floor(start + (target - start) * progress);
+        el.textContent = value.toLocaleString('ru-RU');
+        if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+}
+
+async function loadStats() {
+    try {
+        const data = await apiRequest('/api/stats');
+        const usersEl = document.getElementById('statUsers');
+        const tasksEl = document.getElementById('statTasks');
+        if (usersEl) animateNumber(usersEl, data.users);
+        if (tasksEl) animateNumber(tasksEl, data.tasks);
+    } catch (err) {
+        console.error('loadStats:', err);
+    }
+}
+
+// Ҳангоми боркунии саҳифа — UI-ро навсозӣ кунем + заявкаҳоро бор кунем
+updateAuthUI();
+loadTasks();
+loadStats();
+
+// ===== FILTER BUTTONS (actually filter tasks) =====
+const taskCards = document.querySelectorAll('.task-card[data-category]');
+const noResults = document.querySelector('.no-results');
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const category = btn.dataset.category;
+        filterTasks(category);
+    });
+});
+
+function filterTasks(category) {
+    let visibleCount = 0;
+
+    taskCards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+            card.classList.remove('hidden');
+            visibleCount++;
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+
+    // Show/hide "no results" message
+    if (noResults) {
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+}
+
+// ===== SEARCH FUNCTIONALITY (actually filters tasks) =====
+const searchInput = document.getElementById('heroSearch');
+const searchBtn = document.querySelector('.btn-search');
+
+function performSearch() {
+    if (!searchInput) return;
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (!query) {
+        // Reset: show all, reset filter buttons
+        taskCards.forEach(card => card.classList.remove('hidden'));
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        const allBtn = document.querySelector('.filter-btn[data-category="all"]');
+        if (allBtn) allBtn.classList.add('active');
+        if (noResults) noResults.style.display = 'none';
+        return;
+    }
+
+    // Scroll to tasks
+    const tasksSection = document.getElementById('tasks');
+    if (tasksSection) tasksSection.scrollIntoView({ behavior: 'smooth' });
+
+    // Filter tasks by text content
+    let visibleCount = 0;
+    taskCards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        if (text.includes(query)) {
+            card.classList.remove('hidden');
+            visibleCount++;
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+
+    // Reset filter buttons
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+
+    if (noResults) {
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+}
+
+if (searchBtn) {
+    searchBtn.addEventListener('click', performSearch);
+}
+
+if (searchInput) {
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') performSearch();
+    });
+}
+
+// ===== SMOOTH SCROLL FOR NAV =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Close mobile menu if open
+            if (nav && nav.classList.contains('mobile-open')) {
+                nav.classList.remove('mobile-open');
+                if (mobileMenuBtn) {
+                    mobileMenuBtn.textContent = '☰';
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+        }
+    });
+});
+
+// ===== HEADER SCROLL EFFECT =====
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 100) {
+        header.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+    } else {
+        header.style.boxShadow = 'none';
+    }
+});
+
+// ===== MOBILE MENU =====
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const nav = document.querySelector('.nav');
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('mobile-open');
+        mobileMenuBtn.textContent = isOpen ? '✕' : '☰';
+        mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+}
+
+// ===== CTA BUTTONS =====
+document.querySelectorAll('.cta-actions .btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const text = btn.textContent.trim();
+        if (text.includes('Усто') || text.includes('мастером')) {
+            openModal(registerModal);
+            // Switch to master tab
+            const masterTab = document.querySelector('.reg-tab[data-role="master"]');
+            if (masterTab) masterTab.click();
+        } else {
+            openModal(createTaskModal);
+        }
+    });
+});
+
+// ===== "Фармоиш додан" buttons on specialist cards =====
+document.querySelectorAll('.btn-order').forEach(btn => {
+    btn.addEventListener('click', () => openModal(createTaskModal));
+});
+
+// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    observer.observe(el);
+});
+
+// ===== HERO TAGS CLICK =====
+document.querySelectorAll('.hero-tag').forEach(tag => {
+    tag.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (searchInput) {
+            searchInput.value = tag.textContent;
+            performSearch();
+        }
+    });
+});
+
+// ===== REGION SELECTOR =====
+const regionBtn = document.getElementById('regionBtn');
+const regionDropdown = document.getElementById('regionDropdown');
+const regionCurrent = document.getElementById('regionCurrent');
+
+if (regionBtn && regionDropdown) {
+    regionBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = regionDropdown.classList.toggle('open');
+        regionBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.querySelectorAll('.region-option').forEach(option => {
+        option.addEventListener('click', () => {
+            // Update active state
+            document.querySelectorAll('.region-option').forEach(o => {
+                o.classList.remove('active');
+                o.setAttribute('aria-selected', 'false');
+            });
+            option.classList.add('active');
+            option.setAttribute('aria-selected', 'true');
+
+            // Update button text
+            const cityName = option.getAttribute(`data-${currentLang}`) || option.textContent;
+            regionCurrent.textContent = cityName;
+            regionCurrent.setAttribute('data-tg', option.getAttribute('data-tg'));
+            regionCurrent.setAttribute('data-ru', option.getAttribute('data-ru'));
+
+            // Close dropdown
+            regionDropdown.classList.remove('open');
+            regionBtn.setAttribute('aria-expanded', 'false');
+        });
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!regionBtn.contains(e.target) && !regionDropdown.contains(e.target)) {
+            regionDropdown.classList.remove('open');
+            regionBtn.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
+
+// ===== CHAT WIDGET =====
+const chatFab = document.getElementById('chatFab');
+const chatWindow = document.getElementById('chatWindow');
+const chatClose = document.getElementById('chatClose');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+const chatMessages = document.getElementById('chatMessages');
+const chatBadge = document.getElementById('chatBadge');
+const chatFabIcon = document.getElementById('chatFabIcon');
+
+// Chat bot answers
+const chatAnswers = {
+    tg: {
+        'find-master': 'Барои ёфтани усто, шумо метавонед:\n\n1️⃣ Дар сатри ҷустуҷӯ номи хизматро нависед\n2️⃣ Категорияро интихоб кунед\n3️⃣ Ё фармоиши нав созед — устодон худашон ба шумо ҷавоб медиҳанд!',
+        'become-master': 'Барои усто шудан:\n\n1️⃣ Тугмаи "Бақайдгирӣ" -ро пахш кунед\n2️⃣ "Усто"-ро интихоб кунед\n3️⃣ Маълумотро пур кунед\n\nБақайдгирӣ ройгон аст! 🎉',
+        'how-it-works': 'Yordam.tj хеле осон кор мекунад:\n\n1️⃣ Фармоиш диҳед — корро тавсиф кунед\n2️⃣ Устодон ҷавоб медиҳанд — нарх ва вақтро пешниҳод мекунанд\n3️⃣ Беҳтаринро интихоб кунед — рейтинг ва тавсифотро муқоиса кунед',
+        'pricing': 'Барои муштариён — ройгон! 🆓\n\nШумо ягон пардохт намекунед. Фақат устодон барои дастрасӣ ба фармоишҳо обуна мехаранд.\n\nНархи хизматро бо устодон мувофиқа мекунед.',
+        'contact': '📞 Телефон: +992 (44) 600-00-00\n📧 Email: info@yordam.tj\n📱 Telegram: @yordamtj\n\nВақти корӣ: 9:00 — 21:00, ҳар рӯз',
+        'default': 'Ташаккур барои паём! Мутахассиси мо ба наздикӣ ба шумо ҷавоб хоҳад дод. ⏳\n\nАгар саволи фаврӣ доред, занг занед: +992 (44) 600-00-00'
+    },
+    ru: {
+        'find-master': 'Чтобы найти мастера, вы можете:\n\n1️⃣ Введите название услуги в строке поиска\n2️⃣ Выберите категорию\n3️⃣ Или создайте новое задание — мастера сами откликнутся!',
+        'become-master': 'Чтобы стать мастером:\n\n1️⃣ Нажмите кнопку "Регистрация"\n2️⃣ Выберите "Мастер"\n3️⃣ Заполните данные\n\nРегистрация бесплатна! 🎉',
+        'how-it-works': 'Yordam.tj работает очень просто:\n\n1️⃣ Создайте задание — опишите работу\n2️⃣ Мастера откликнутся — предложат цену и сроки\n3️⃣ Выберите лучшего — сравните рейтинги и отзывы',
+        'pricing': 'Для заказчиков — бесплатно! 🆓\n\nВы не платите ничего. Только мастера покупают подписку для доступа к заданиям.\n\nСтоимость услуг обсуждается с мастером напрямую.',
+        'contact': '📞 Телефон: +992 (44) 600-00-00\n📧 Email: info@yordam.tj\n📱 Telegram: @yordamtj\n\nРежим работы: 9:00 — 21:00, ежедневно',
+        'default': 'Спасибо за сообщение! Наш специалист скоро ответит вам. ⏳\n\nЕсли вопрос срочный, позвоните: +992 (44) 600-00-00'
+    }
+};
+
+function getTimeNow() {
+    return new Date().toLocaleTimeString('ru', { hour: '2-digit', minute: '2-digit' });
+}
+
+function addChatMessage(text, isUser) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `chat-message ${isUser ? 'chat-message-user' : 'chat-message-bot'}`;
+    msgDiv.innerHTML = `
+        <div class="chat-msg-bubble">
+            <p>${text.replace(/\n/g, '<br>')}</p>
+            <span class="chat-msg-time">${getTimeNow()}</span>
+        </div>
+    `;
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showTypingThenReply(text) {
+    // Show typing indicator
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'chat-message chat-message-bot';
+    typingDiv.id = 'chatTyping';
+    typingDiv.innerHTML = `<div class="chat-msg-bubble" style="color:var(--gray-400)">●●●</div>`;
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    setTimeout(() => {
+        const typing = document.getElementById('chatTyping');
+        if (typing) typing.remove();
+        addChatMessage(text, false);
+    }, 800 + Math.random() * 600);
+}
+
+if (chatFab) {
+    chatFab.addEventListener('click', () => {
+        const isOpen = chatWindow.classList.toggle('open');
+        chatFabIcon.textContent = isOpen ? '✕' : '💬';
+        if (isOpen) {
+            chatBadge.classList.add('hidden');
+            chatInput.focus();
+        }
+    });
+}
+
+if (chatClose) {
+    chatClose.addEventListener('click', () => {
+        chatWindow.classList.remove('open');
+        chatFabIcon.textContent = '💬';
+    });
+}
+
+// Quick action buttons
+document.querySelectorAll('.chat-quick-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const answerKey = btn.dataset.answer;
+        const userText = btn.textContent;
+        const answers = chatAnswers[currentLang] || chatAnswers.tg;
+
+        addChatMessage(userText, true);
+        showTypingThenReply(answers[answerKey] || answers['default']);
+    });
+});
+
+// Send custom message
+function sendChatMessage() {
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    addChatMessage(text, true);
+    chatInput.value = '';
+
+    const answers = chatAnswers[currentLang] || chatAnswers.tg;
+    showTypingThenReply(answers['default']);
+}
+
+if (chatSend) chatSend.addEventListener('click', sendChatMessage);
+if (chatInput) {
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendChatMessage();
+    });
+}
+
+</script>
+<script>
+// Register Service Worker for PWA
+if ('serviceWorker' in navigator) {
+ window.addEventListener('load', () => {
+ navigator.serviceWorker.register('./sw.js')
+ .then(reg => console.log('SW registered:', reg.scope))
+ .catch(err => console.log('SW registration failed:', err));
+ });
+}
+</script>
+</body>
+</html>
