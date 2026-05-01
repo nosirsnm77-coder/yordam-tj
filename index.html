@@ -2453,7 +2453,11 @@ function setBtnLoading(btn, loading, originalText) {
 }
 
 // ===== BACKEND API =====
-const API_URL = 'http://localhost:3001';
+// Авто-определение: если открыто на localhost → локальный backend
+//                   иначе (на Vercel и т.д.) → продакшен backend на Render
+const API_URL = (location.hostname === 'localhost' || location.hostname === '127.0.0.1')
+    ? 'http://localhost:3001'
+    : 'https://yordam-tj-backend.onrender.com';
 
 function saveToken(token) { localStorage.setItem('yordam_token', token); }
 function getToken() { return localStorage.getItem('yordam_token'); }
