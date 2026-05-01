@@ -1601,20 +1601,10 @@ a { text-decoration: none; color: inherit; }
  <span class="region-current" id="regionCurrent" data-tg="Душанбе" data-ru="Душанбе">Душанбе</span>
  <span class="region-arrow" aria-hidden="true">▾</span>
  </button>
- <ul class="region-dropdown" id="regionDropdown" role="listbox" aria-label="Интихоби шаҳр">
+ <ul class="region-dropdown" id="regionDropdown" role="listbox" aria-label="Интихоби шаҳр" style="max-height:400px;overflow-y:auto;">
  <li class="region-dropdown-title" data-tg="Шаҳрро интихоб кунед" data-ru="Выберите город">Шаҳрро интихоб кунед</li>
- <li class="region-option active" role="option" aria-selected="true" data-city="dushanbe" data-tg="Душанбе" data-ru="Душанбе">Душанбе</li>
- <li class="region-option" role="option" aria-selected="false" data-city="khujand" data-tg="Хуҷанд" data-ru="Худжанд">Хуҷанд</li>
- <li class="region-option" role="option" aria-selected="false" data-city="bokhtar" data-tg="Бохтар" data-ru="Бохтар">Бохтар</li>
- <li class="region-option" role="option" aria-selected="false" data-city="kulob" data-tg="Кӯлоб" data-ru="Куляб">Кӯлоб</li>
- <li class="region-option" role="option" aria-selected="false" data-city="isfara" data-tg="Исфара" data-ru="Исфара">Исфара</li>
- <li class="region-option" role="option" aria-selected="false" data-city="istaravshan" data-tg="Истаравшан" data-ru="Истаравшан">Истаравшан</li>
- <li class="region-option" role="option" aria-selected="false" data-city="vahdat" data-tg="Ваҳдат" data-ru="Вахдат">Ваҳдат</li>
- <li class="region-option" role="option" aria-selected="false" data-city="tursunzoda" data-tg="Турсунзода" data-ru="Турсунзаде">Турсунзода</li>
- <li class="region-option" role="option" aria-selected="false" data-city="panjakent" data-tg="Панҷакент" data-ru="Пенджикент">Панҷакент</li>
- <li class="region-option" role="option" aria-selected="false" data-city="khorog" data-tg="Хоруғ" data-ru="Хорог">Хоруғ</li>
- <li class="region-option" role="option" aria-selected="false" data-city="norak" data-tg="Нурек" data-ru="Нурек">Нурек</li>
- <li class="region-option" role="option" aria-selected="false" data-city="all" data-tg="Ҳамаи Тоҷикистон" data-ru="Весь Таджикистан">Ҳамаи Тоҷикистон</li>
+ <li class="region-option active" role="option" aria-selected="true" data-city="all" style="font-weight:700;color:#2563eb;">🇹🇯 Ҳамаи Тоҷикистон</li>
+ <!-- Динамикӣ пур мешавад аз TJ_LOCATIONS -->
  </ul>
  </div>
  <nav class="nav" id="mainNav" aria-label="Навигатсияи асосӣ">
@@ -2477,6 +2467,174 @@ document.querySelectorAll('.reg-tab').forEach(tab => {
     });
 });
 
+// ===== TJ LOCATIONS — шаҳру ноҳияҳои Тоҷикистон =====
+const TJ_LOCATIONS = {
+    "Душанбе": [
+        "Шоҳмансур", "Сино", "Фирдавсӣ", "Исмоили Сомонӣ"
+    ],
+    "Вилояти Суғд": [
+        "Хуҷанд", "Бобоҷон Ғафуров", "Истаравшан", "Исфара", "Конибодом",
+        "Панҷакент", "Зафаробод", "Спитамен", "Айнӣ", "Деваштич",
+        "Мастчоҳ", "Кӯҳистони Мастчоҳ", "Ҷ. Расулов", "Шаҳристон", "Ашт", "Гулистон"
+    ],
+    "Вилояти Хатлон": [
+        "Бохтар", "Кӯлоб", "Дангара", "Ёвон", "Восеъ", "Хуросон", "Левакант",
+        "Носири Хусрав", "Қубодиён", "Шаҳритус", "Ҷайҳун", "Панҷ", "Темурмалик",
+        "Балҷувон", "Фархор", "Ховалинг", "Ҷалолиддини Балхӣ", "Дӯстӣ",
+        "Кушониён", "Вахш", "Норак", "Муъминобод", "Шамсиддин Шоҳин"
+    ],
+    "Ноҳияҳои тобеи ҷумҳурӣ": [
+        "Турсунзода", "Ваҳдат", "Рӯдакӣ", "Шаҳринав", "Файзобод",
+        "Варзоб", "Рашт", "Тоҷикобод", "Сангвор", "Тавилдара", "Лахш", "Нуробод"
+    ],
+    "ВМКБ (Бадахшон)": [
+        "Хоруғ", "Шуғнон", "Рӯшон", "Ишкошим", "Мурғоб", "Ванҷ", "Дарвоз", "Роштқалъа"
+    ]
+};
+
+// Худкор пур кардани <select> бо optgroup
+function populateLocationSelect(selectEl, includeOnline = false, defaultValue = '') {
+    if (!selectEl) return;
+    selectEl.innerHTML = '';
+
+    // Аввалин варианти "Интихоб кунед"
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = '— Шаҳр/ноҳияро интихоб кунед —';
+    placeholder.disabled = true;
+    placeholder.selected = !defaultValue;
+    selectEl.appendChild(placeholder);
+
+    if (includeOnline) {
+        const onlineOpt = document.createElement('option');
+        onlineOpt.value = 'Дар хат (онлайн)';
+        onlineOpt.textContent = '🌐 Дар хат (онлайн)';
+        selectEl.appendChild(onlineOpt);
+    }
+
+    // Гурӯҳбандӣ аз рӯи минтақа
+    Object.keys(TJ_LOCATIONS).forEach(region => {
+        const group = document.createElement('optgroup');
+        group.label = region;
+        TJ_LOCATIONS[region].forEach(city => {
+            const opt = document.createElement('option');
+            opt.value = city;
+            opt.textContent = city;
+            if (city === defaultValue) opt.selected = true;
+            group.appendChild(opt);
+        });
+        selectEl.appendChild(group);
+    });
+}
+
+// Пур кардан ҳангоми боркунии саҳифа
+document.addEventListener('DOMContentLoaded', () => {
+    populateLocationSelect(document.getElementById('regCity'), false, 'Душанбе');
+    populateLocationSelect(document.getElementById('taskCity'), true, 'Душанбе');
+    populateMobileLocationSelect(document.getElementById('mobileRegionSelect'));
+    populateHeaderRegionDropdown();
+    initLocationFilter();
+});
+
+// Селектори макон дар header (dropdown бо optgroup)
+function populateHeaderRegionDropdown() {
+    const dropdown = document.getElementById('regionDropdown');
+    if (!dropdown) return;
+    Object.keys(TJ_LOCATIONS).forEach(region => {
+        const headerLi = document.createElement('li');
+        headerLi.className = 'region-dropdown-section';
+        headerLi.textContent = '— ' + region + ' —';
+        headerLi.style.cssText = 'padding:6px 16px;font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;font-weight:700;background:#f8fafc;cursor:default;';
+        dropdown.appendChild(headerLi);
+        TJ_LOCATIONS[region].forEach(city => {
+            const li = document.createElement('li');
+            li.className = 'region-option';
+            li.setAttribute('role', 'option');
+            li.setAttribute('aria-selected', 'false');
+            li.dataset.city = city;
+            li.textContent = city;
+            dropdown.appendChild(li);
+        });
+    });
+}
+
+// Селекти мобайл — flat-list
+function populateMobileLocationSelect(selectEl) {
+    if (!selectEl) return;
+    selectEl.innerHTML = '<option value="all">🇹🇯 Ҳамаи Тоҷикистон</option>';
+    Object.keys(TJ_LOCATIONS).forEach(region => {
+        const group = document.createElement('optgroup');
+        group.label = region;
+        TJ_LOCATIONS[region].forEach(city => {
+            const opt = document.createElement('option');
+            opt.value = city;
+            opt.textContent = city;
+            group.appendChild(opt);
+        });
+        selectEl.appendChild(group);
+    });
+}
+
+// Сохранение и фильтрация
+let selectedCity = localStorage.getItem('yordam_city') || 'all';
+
+function setSelectedCity(city) {
+    selectedCity = city;
+    localStorage.setItem('yordam_city', city);
+    // Обновить отображение в header
+    const current = document.getElementById('regionCurrent');
+    if (current) current.textContent = city === 'all' ? 'Ҳамаи ТҶ' : city;
+    // Обновить активный класс в dropdown
+    document.querySelectorAll('.region-option').forEach(opt => {
+        const isActive = opt.dataset.city === city;
+        opt.classList.toggle('active', isActive);
+        opt.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    // Обновить mobile select
+    const mobileSel = document.getElementById('mobileRegionSelect');
+    if (mobileSel) mobileSel.value = city;
+    // Перефильтровать заявки
+    filterTasksByCity();
+}
+
+function initLocationFilter() {
+    // Восстановить выбор
+    setSelectedCity(selectedCity);
+
+    // Обработчики кликов на header dropdown (через делегирование)
+    const dropdown = document.getElementById('regionDropdown');
+    if (dropdown) {
+        dropdown.addEventListener('click', (e) => {
+            const opt = e.target.closest('.region-option');
+            if (opt && opt.dataset.city) {
+                setSelectedCity(opt.dataset.city);
+                document.getElementById('regionBtn')?.click(); // закрыть dropdown
+            }
+        });
+    }
+    // Обработчик мобильного select
+    const mobileSel = document.getElementById('mobileRegionSelect');
+    if (mobileSel) {
+        mobileSel.addEventListener('change', (e) => setSelectedCity(e.target.value));
+    }
+}
+
+// Фильтрация задач из базы по выбранному городу
+function filterTasksByCity() {
+    const cards = document.querySelectorAll('.task-card.task-from-db');
+    let visible = 0;
+    cards.forEach(card => {
+        const loc = card.querySelector('.task-location')?.textContent || '';
+        if (selectedCity === 'all' || loc.includes(selectedCity)) {
+            card.style.display = '';
+            visible++;
+        } else {
+            card.style.display = 'none';
+        }
+    });
+    // Если не нашли — оставить как есть, заявки-демо остаются видимыми
+}
+
 // ===== TOAST NOTIFICATIONS =====
 function toast(message, type = 'info', duration = 4000) {
     const container = document.getElementById('toastContainer');
@@ -2807,6 +2965,8 @@ async function loadTasks() {
             grid.insertBefore(createTaskCard(task), grid.firstChild);
         });
         console.log(`✅ Аз база ${data.tasks.length} заявка бор шуд`);
+        // Применить фильтр по выбранному городу
+        if (typeof filterTasksByCity === 'function') filterTasksByCity();
     } catch (err) {
         console.error('Хатогӣ дар loadTasks:', err);
     }
